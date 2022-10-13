@@ -1,1 +1,0 @@
-In this directory we will upload all of our UML Diagrams
