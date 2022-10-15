@@ -4,10 +4,13 @@
 
 #ifndef OPTIMAL_CIRCUITRY_COS_214_PROJECT_CONCRETECOUNTRY_H
 #define OPTIMAL_CIRCUITRY_COS_214_PROJECT_CONCRETECOUNTRY_H
+#include "country.h"
 
+class concreteCountry : country{
+public:
+    concreteCountry() : country(){
 
-class concreteCountry {
-
+    }
 };
 
 

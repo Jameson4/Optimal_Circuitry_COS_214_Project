@@ -17,9 +17,9 @@ private:
 public:
     string name;
     countryFactory();
-    void attackAir();
-    void attackSea();
-    void attackLand();
+    virtual void attackAir();
+    virtual void attackSea();
+    virtual void attackLand();
     void createAlliance(*country);
     void createEnemy(*country);
     void buildRoads(*country);

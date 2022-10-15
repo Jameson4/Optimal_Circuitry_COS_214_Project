@@ -4,9 +4,10 @@
 
 #ifndef OPTIMAL_CIRCUITRY_COS_214_PROJECT_CONCRETECOUNTRYFACTORY_H
 #define OPTIMAL_CIRCUITRY_COS_214_PROJECT_CONCRETECOUNTRYFACTORY_H
+#include "countryFactory.h"
 
 
-class concreteCountryFactory {
+class concreteCountryFactory : countryFactory {
 
 };
 

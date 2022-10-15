@@ -7,7 +7,9 @@
 
 
 class country {
-
+public:
+    virtual country();
+    virtual ~country();
 };
 
 
