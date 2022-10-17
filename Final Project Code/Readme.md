@@ -2,7 +2,8 @@
 
 #
 
-AllianceCountry maintains a list of countries that are members of a given alliance. Each country member is represented by a leaf in the composite pattern
+AllianceCountry maintains a list of countries that are members of a given alliance. 
+Each country member is represented by a leaf in the composite pattern
 
 Countries can be added and removed as well as information about it can be printed on the screen
 
