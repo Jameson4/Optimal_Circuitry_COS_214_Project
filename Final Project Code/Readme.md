@@ -18,5 +18,10 @@ Countries can be added and removed as well as information about it can be printe
 In the main a few countries are created using the _Country class_ of the pattern
 Then those countries are added to the Group of Countries (CountryGroup class)
 
+## How to run code
+A makefile has been included. to run the program <br>
+Open the terminal and on the project directory folder execute: _make_ then _make run_ <br>
+The main.cpp as it currently is will be executed.
+
 ### Other notes
 _algorithm_  library was used in conjuction with the _vector_ library
