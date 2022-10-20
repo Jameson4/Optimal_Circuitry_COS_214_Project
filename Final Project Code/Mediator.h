@@ -1,0 +1,11 @@
+#ifndef Mediator_h
+#define Mediator_h
+#include"observer.h"
+class Mediator{
+    public:
+        virtual void reg(observer : c*)=0;
+        virtual void DeReg(observer : c*);
+        virtual void notify();
+        virtual void update();
+};
+#endif
