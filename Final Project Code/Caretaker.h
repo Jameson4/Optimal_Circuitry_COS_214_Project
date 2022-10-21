@@ -5,7 +5,7 @@
 
 class Caretaker {
     private:
-        list<Memento> list;
+        std::list<Memento> list;
     public:
         Caretaker();
         void add(Memento);
