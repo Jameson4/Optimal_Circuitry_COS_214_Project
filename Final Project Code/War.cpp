@@ -10,7 +10,7 @@ War::War() {
 }
 
 War::War(State s) {
-    state_ = s;
+    *state_ = s;
 }
 
 void War::stop() {
@@ -24,11 +24,11 @@ void War::resume() {
 }
 
 Memento War::createMemento() {
-    return new Memento(state_);
+    return new Memento(*state_);
 }
 
 void War::restore(Memento mem) {
-    state_ = mem.getState();
+    *state_ = mem.getState();
 }
 
 void War::step(string s) {
