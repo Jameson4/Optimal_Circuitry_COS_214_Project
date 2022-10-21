@@ -18,8 +18,8 @@ class DesignModeCommand : public Command {
     public:
         DesignModeCommand(War*);
         void execute();
-        void undo(Memento);
-        Memento pause();
+        void undo();
+        void pause();
 
 };
 
@@ -27,7 +27,7 @@ class RealModeCommand : public Command {
     public:
         RealModeCommand();
         void execute();
-}
+};
 
 
 #endif
