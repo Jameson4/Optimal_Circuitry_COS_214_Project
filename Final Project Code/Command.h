@@ -13,7 +13,7 @@ class DesignModeCommand : public Command {
     private:
         War* war_;
         bool busyState;
-        Caretaker carer;
+        Caretaker* carer;
 
     public:
         DesignModeCommand(War*);
