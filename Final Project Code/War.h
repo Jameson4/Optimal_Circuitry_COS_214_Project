@@ -8,7 +8,7 @@ class War {
     friend class Memento
     private:
         bool war;
-        State state_;
+        State* state_;
     public:
         War();
         War(State);
