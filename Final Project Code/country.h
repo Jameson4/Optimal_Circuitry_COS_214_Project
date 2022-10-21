@@ -5,11 +5,20 @@
 #ifndef OPTIMAL_CIRCUITRY_COS_214_PROJECT_COUNTRY_H
 #define OPTIMAL_CIRCUITRY_COS_214_PROJECT_COUNTRY_H
 
+#include <string>
+
+using namespace std;
 
 class country {
 public:
-    virtual country();
+    country();
     virtual ~country();
+
+    virtual string getName() = 0;
+    virtual void print() = 0;
+protected:
+    int navyPersonnell, armypersonnell, airforcepersonnell;
+    string countryName;
 };
 
 

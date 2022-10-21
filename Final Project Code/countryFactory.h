@@ -5,24 +5,17 @@
 #ifndef OPTIMAL_CIRCUITRY_COS_214_PROJECT_COUNTRYFACTORY_H
 #define OPTIMAL_CIRCUITRY_COS_214_PROJECT_COUNTRYFACTORY_H
 
+#include "country.h"
 #include <string>
 
 using namespace std;
 
 
 class countryFactory {
-private:
-    int personnel;
-    bool navy,airforce,army;
 public:
-    string name;
     countryFactory();
-    virtual void attackAir();
-    virtual void attackSea();
-    virtual void attackLand();
-    void createAlliance(*country);
-    void createEnemy(*country);
-    void buildRoads(*country);
+    ~countryFactory();
+    virtual country* createCountry() = 0;
 };
 
 
