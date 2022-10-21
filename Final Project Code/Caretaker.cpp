@@ -9,7 +9,7 @@ void Caretaker::add(Memento mem) {
 }
 
 Memento Caretaker::retrieve() {
-    Memento temp = list.end();
+    Memento temp = *list.end();
     list.pop_back();
     return temp;
 }
