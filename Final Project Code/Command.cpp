@@ -12,9 +12,9 @@ void DesignModeCommand::execute() {
         string c = "";
         cin>>c;
         if (c == "pause") {
-            carer.add(pause());
+            pause();
         } else if(c == "undo") {
-            war_->restore(undo(carer.retrieve()))
+            undo();
         }
         else if(c == "end") {
             return;
@@ -23,12 +23,12 @@ void DesignModeCommand::execute() {
         }
     }
 }
-Memento DesignModeCommand::pause() {
+void DesignModeCommand::pause() {
     war_->pause();
-    return war_->createMemento();
+    carer->add(war->createMemento());
 }
-void DesignModeCommand::undo(Memento mem) {
-    war_->restore(mem);
+void DesignModeCommand::undo() {
+    war_->restore(carer->retrieve());
 }
 
 RealModeCommand::RealModeCommand() {}
