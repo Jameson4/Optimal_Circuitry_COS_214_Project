@@ -12,8 +12,8 @@ using namespace std;
 
 class concreteCountry : public country{
 public:
-    explicit concreteCountry(string name);
-    concreteCountry(string name, int navyPersonnell, int armyPersonnell, int airforcePersonnell);
+    explicit concreteCountry(const string& name, const string& size);
+    concreteCountry(string name, const string& size, int navyPersonnell, int armyPersonnell, int airforcePersonnell);
 
     string getName() override;
     void print() override;

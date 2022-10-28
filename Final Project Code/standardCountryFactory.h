@@ -12,7 +12,7 @@ using namespace std;
 
 class standardCountryFactory : countryFactory{
 public:
-    virtual country* createCountry(string _name,int _navyPersonnell, int _armyPersonnell, int _airforcePersonnell);
+    virtual country* createCountry(string _name, string _size,int _navyPersonnell, int _armyPersonnell, int _airforcePersonnell);
 };
 
 

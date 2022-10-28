@@ -11,14 +11,14 @@ using namespace std;
 
 class country {
 public:
-    country();
+    //country();
     virtual ~country();
 
     virtual string getName() = 0;
     virtual void print() = 0;
 protected:
-    int navyPersonnell, armypersonnell, airforcepersonnell;
-    string countryName;
+    int navyPersonnell, armyPersonnell, airforcePersonnell;
+    string countryName, countrySize;
 };
 
 
