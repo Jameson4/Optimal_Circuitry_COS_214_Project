@@ -1,0 +1,15 @@
+//
+// Created by DScho on 2022/10/28.
+//
+
+#ifndef OPTIMAL_CIRCUITRY_COS_214_PROJECT_ABSTRACTMILITARYFACTORY_H
+#define OPTIMAL_CIRCUITRY_COS_214_PROJECT_ABSTRACTMILITARYFACTORY_H
+
+
+class abstractMilitaryFactory {
+public:
+    virtual void militaryFactory();
+};
+
+
+#endif //OPTIMAL_CIRCUITRY_COS_214_PROJECT_ABSTRACTMILITARYFACTORY_H
