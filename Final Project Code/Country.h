@@ -14,14 +14,18 @@ class Country: public AllianceCountry
 {
 	public: 
 	Country(string name);
+	Country(string name, double size); //country name and size
 	~Country();
 	string getName(); // return name of the country
 	void setName(string name); // set name of the country
+	double getCountrySize();
+	void setCountrySize();
 	virtual void add(AllianceCountry* c);
 	virtual void remove(AllianceCountry* c); 
 	virtual void print(); // print coutry info
 	private:
 	string name;
+	double countrySize;
 };
 
 #endif

@@ -6,8 +6,13 @@
 using namespace std;
 
 Country::Country(string name) {
-	// constructor
+	// constructor 1
 	this->name = name;
+}
+Country::Country(string name, double size) {
+	// constructor 2
+	this->name = name;
+	this->countrySize = size;
 }
 
 Country::~Country(){
@@ -16,6 +21,7 @@ Country::~Country(){
 
 void Country::add(AllianceCountry* c){}
 void Country::remove(AllianceCountry* c){}
+
 string Country::getName() {
 	return this->name;
 }
