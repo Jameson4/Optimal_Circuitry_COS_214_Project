@@ -9,7 +9,7 @@ Countries can be added and removed as well as information about it can be printe
 ## Participants
 <ul>
 <li> Component ===> AllianceCountry</li> 
-<li> Composite ====> CountrGroup</li>
+<li> Composite ====> CountryGroup</li>
 <li> Leaf ======> Country </li>
 </ul>
 
