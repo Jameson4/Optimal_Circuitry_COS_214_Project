@@ -3,3 +3,8 @@
 //
 
 #include "army.h"
+
+army::army(int _personnel, string _type) {
+    personnel = _personnel;
+    type = _type;
+}

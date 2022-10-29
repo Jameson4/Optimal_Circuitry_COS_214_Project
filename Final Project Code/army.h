@@ -9,7 +9,7 @@
 
 class army : public abstractMilitary {
 public:
-    abstractMilitary* clone();
+    army(int _personnel, string _type);
 };
 
 

@@ -3,3 +3,8 @@
 //
 
 #include "airforce.h"
+
+airforce::airforce(int _personnel, string _type) {
+    personnel = _personnel;
+    type = _type;
+}

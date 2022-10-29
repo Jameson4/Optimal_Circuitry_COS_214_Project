@@ -5,11 +5,12 @@
 #ifndef OPTIMAL_CIRCUITRY_COS_214_PROJECT_AIRFORCE_H
 #define OPTIMAL_CIRCUITRY_COS_214_PROJECT_AIRFORCE_H
 
+#include <String>
 #include "abstractMilitary.h"
 
 class airforce : public abstractMilitary{
 public:
-    abstractMilitary* clone();
+    airforce(int _personnel, string _type);
 };
 
 

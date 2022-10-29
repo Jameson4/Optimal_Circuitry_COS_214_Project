@@ -7,9 +7,11 @@
 
 #include "abstractMilitary.h"
 
+using namespace std;
+
 class navy : public abstractMilitary {
 public:
-    abstractMilitary* clone();
+    navy(int _personnel, string _type);
 };
 
 

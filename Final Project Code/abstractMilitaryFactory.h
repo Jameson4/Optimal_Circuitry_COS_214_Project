@@ -5,10 +5,15 @@
 #ifndef OPTIMAL_CIRCUITRY_COS_214_PROJECT_ABSTRACTMILITARYFACTORY_H
 #define OPTIMAL_CIRCUITRY_COS_214_PROJECT_ABSTRACTMILITARYFACTORY_H
 
+#include <vector>
+#include "abstractMilitary.h"
+#include "country.h"
+
+using namespace std;
 
 class abstractMilitaryFactory {
 public:
-    virtual void militaryFactory();
+    virtual void createMilitary(country* _country) = 0;
 };
 
 

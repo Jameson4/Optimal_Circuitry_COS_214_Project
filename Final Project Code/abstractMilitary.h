@@ -5,10 +5,15 @@
 #ifndef OPTIMAL_CIRCUITRY_COS_214_PROJECT_ABSTRACTMILITARY_H
 #define OPTIMAL_CIRCUITRY_COS_214_PROJECT_ABSTRACTMILITARY_H
 
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 class abstractMilitary {
 public:
-    virtual abstractMilitary* clone();
+    int personnel;
+    string type;
 };
 
 

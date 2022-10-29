@@ -3,3 +3,7 @@
 //
 
 #include "country.h"
+
+country::~country() {
+
+}

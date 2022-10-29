@@ -11,11 +11,19 @@
 using namespace std;
 
 class concreteCountry : public country{
+private:
+    int totalPersonnel = 0;
 public:
     explicit concreteCountry(const string& name, const string& size);
     concreteCountry(string name, const string& size, int navyPersonnell, int armyPersonnell, int airforcePersonnell);
+    ~concreteCountry() override;
 
     string getName() override;
+    int getTotalPersonnel() override;
+    int getArmyPersonnel() override;
+    int getNavyPersonnel() override;
+    int getAirforcePersonnel() override;
+
     void print() override;
     void attackAir(int personnel);
     void attackSea(int personnel);
