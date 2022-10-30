@@ -44,9 +44,9 @@ void ModesOfTransport::setTheater(Theater* theater_) {  ///// Waiting for Theate
     }
 
     // set different theaters for this country
-    theaters[0] = new WaterTheater(theater_->WaterTheater); // Theater needs copy constructor because of initialization with same object
-    theaters[1] = new LandTheater(theater_->LandTheater);  // ""
-    theaters[2] = new AirTheater(theater_->AirTheater); // ""
+    theaters[0] = new WaterTheater(theater_[0]->WaterTheater); // Theater needs copy constructor because of initialization with same object
+    theaters[1] = new LandTheater(theater_[1]->LandTheater);  // ""
+    theaters[2] = new AirTheater(theater_[2]->AirTheater); // ""
 }
 
 ModesOfTransport::~ModesOfTransport() {
