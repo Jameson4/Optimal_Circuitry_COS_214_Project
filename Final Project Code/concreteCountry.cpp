@@ -22,7 +22,6 @@ concreteCountry::concreteCountry(const string& name, const string& size) {
     cout<<"Welcome " + name + " to the war!\n";
     countryName = name;
     countrySize = size;
-    srand(time(0));
     if(countrySize == "small"){
         navyPersonnell = rand()%(50000-35000+1)+35000;
         armyPersonnell = rand()%(50000-35000+1)+35000;
