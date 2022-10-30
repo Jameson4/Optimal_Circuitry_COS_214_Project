@@ -29,5 +29,22 @@ class RealModeCommand : public Command {
         void execute();
 };
 
+//what i was thinking
+
+PauseCommand::PauseCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
+void PauseCommand::execute() {
+    carer->add(war->stop());
+}
+
+ResumeCommand::ResumeCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
+void ResumeCommand::execute() {
+    war->resume();
+}
+
+UndoCommand::UndoCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
+void UndoCommand::execute() {
+    war->restore(carer->retrieve());
+}
+
 
 #endif
