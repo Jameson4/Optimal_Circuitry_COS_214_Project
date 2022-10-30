@@ -12,7 +12,7 @@ class War {
     public:
         War();
         War(State);
-        void stop();
+        Memento stop();
         void resume();
         Memento createMemento();
         void restore(Memento);
