@@ -27,7 +27,7 @@ class ModesOfTransport
         bool isOperational;
         int damage;
         string name;
-        Theater* theaters; // Modes of transport are present in the theater Class
+        Theater* theaters[3]; // Modes of transport are present in the theater Class
 };
 
 #endif
