@@ -24,8 +24,7 @@ void DesignModeCommand::execute() {
     }
 }
 void DesignModeCommand::pause() {
-    war_->pause();
-    carer->add(war->createMemento());
+    carer->add(war->stop());
 }
 void DesignModeCommand::undo() {
     war_->restore(carer->retrieve());
