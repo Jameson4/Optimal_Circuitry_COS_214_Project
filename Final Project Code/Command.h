@@ -30,21 +30,32 @@ class RealModeCommand : public Command {
 };
 
 //what i was thinking
+class PauseCommand : public Command {
+    private:
+        War* war;
+        Caretaker* carer;
+    public:
+        PauseCommand(War*,Caretaker*);
+        void execute();
+};
 
-PauseCommand::PauseCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
-void PauseCommand::execute() {
-    carer->add(war->stop());
-}
+class ResumeCommand : public Command {
+    private:
+        War* war;
+        Caretaker* carer;
+    public:
+        ResumeCommand(War*,Caretaker*);
+        void execute();
+};
 
-ResumeCommand::ResumeCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
-void ResumeCommand::execute() {
-    war->resume();
-}
-
-UndoCommand::UndoCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
-void UndoCommand::execute() {
-    war->restore(carer->retrieve());
-}
+class UndoCommand : public Command {
+    private:
+        War* war;
+        Caretaker* carer;
+    public:
+        UndoCommand(War*,Caretaker*);
+        void execute();
+};
 
 
 #endif
