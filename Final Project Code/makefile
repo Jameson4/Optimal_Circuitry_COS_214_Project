@@ -1,7 +1,7 @@
 main: main.o LaunchReanactment.o State.o Memento.o Caretaker.o War.o Command.o
-	g++ -o main main.o
+	g++ -o main main.o LaunchReanactment.o State.o Memento.o Caretaker.o War.o Command.o
 
-main.o: main.cpp LaunchReanactment.h Command.h
+main.o: main.cpp LaunchReanactment.h Command.h LaunchReanactment.h Caretaker.h War.h
 	g++ -c main.cpp
 	
 LaunchReanactment.o: LaunchReanactment.cpp LaunchReanactment.h Command.h
