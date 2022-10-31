@@ -1,6 +1,10 @@
+#include "WaterTheater.h"
+WaterTheater::WaterTheater(country *c,int s):Theater(c,s){
+    Military=new Military**[size];
+    for(int i=0;i<size;i++){
+        Military[i]=new Military*[size];
+    }
+}
+void WaterTheater::fight(){
 
-WaterTheater(ModesOfTransport* ModesOfTransport,Theater *successor,abstractMilitary ***Military,std::string ty);
-void addModeOfTransport(ModesOfTransport* m);
-bool isEmpty();
-void fight();
-void addMilitary(abstractMilitary* m);   
+}

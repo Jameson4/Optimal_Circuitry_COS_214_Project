@@ -1,10 +1,9 @@
+//Bandisa
 #include "Theater.h"
 
 
-Theater::Theater(ModesOfTransport* ModesOfTransport,Theater *successor,abstractMilitary ***Military,int s){
-    this->ModesOfTransport=ModesOfTransport;
-    this->successor=successor;
-    this->Military=Military;
+Theater::Theater(country *c,int s){
+    this->country=c;
     this->size=s;
 }
 Theater::~Theater(){
@@ -17,4 +16,37 @@ Theater::~Theater(){
     }
     delete [] Military;
     Military=NULL;
+}
+void Theater::add(Theater *t){ //creating chain for commands
+    if(next)
+        next->add(t);
+    else
+        next=t;
+}
+
+void Theater::addMilitary(abstractMilitary* m){
+    int i=rand()%(size+1)+0;
+    int j=rand()%(size+1)+0;
+    bool added=false;
+    if(numFighters<size*size){
+        while(!added){
+            if(Military && Military[i] && Military[i][j]==NULL){
+                Military[i][j]=m;
+                added=true;
+                numFighters++;
+                return
+            }
+            else{
+                i=rand()%(size+1)+0;
+                j=rand()%(size+1)+0; 
+            }
+        }
+    }    
+}
+void Theater::addModeOfTransport(ModesOfTransport* m){
+    ModesOfTransport=m;
+}
+
+bool Theater::isEmpty(){
+    return numFighters>0;
 }

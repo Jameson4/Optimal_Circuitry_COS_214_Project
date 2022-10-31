@@ -3,19 +3,22 @@
 #include <vector>
 #include "abstractMilitary.h"
 #include "ModesOfTransport.h"
+#include "country.h"
 
 class Theater{
     private:
         ModesOfTransport* ModesOfTransport;
-        Theater *successor;
         abstractMilitary ***Military;
-        int size;
+        int size,numFighters;
+        country *country;
+        Theater *next;
     public:
-        Theater(ModesOfTransport* ModesOfTransport,Theater *successor,abstractMilitary ***Military);
-        virtual void addModeOfTransport(ModesOfTransport* m)=0;
-        virtual bool isEmpty()=0;
+        Theater(country *c,int s);
+        void add(Theater*);
+        virtual void addModeOfTransport(ModesOfTransport* m);
+        virtual bool isEmpty();
         virtual void fight()=0;
-        virtual void addMilitary(abstractMilitary* m)=0;
+        virtual void addMilitary(abstractMilitary* m);
         virtual ~Theater();
 };
 

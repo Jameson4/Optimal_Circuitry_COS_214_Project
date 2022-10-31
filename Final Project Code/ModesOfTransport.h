@@ -8,6 +8,7 @@ class ModesOfTransport{
         int damage;
         int health;
     public:
+        ModesOfTransport(country*,Theater*);
         ModesOfTransport( Theater* theaters,bool isOperational,int damage,int health);
         bool getsOperational();
         void setisOperational(bool isOperational);
