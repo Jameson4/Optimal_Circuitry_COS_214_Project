@@ -1,6 +1,8 @@
 #include "LaunchReanactment.h"
 #include <iostream>
-#include "Command.h"
+#include "ResumeCommand.h"
+#include "PauseCommand.h"
+#include "UndoCommand.h"
 using namespace std;
 
 LaunchReanactment::LaunchReanactment(Command* res, Command* paus, Command* undo) : ResumeCommand_(res), PauseCommand_(paus), UndoCommand_(undo), paused(true) {}
