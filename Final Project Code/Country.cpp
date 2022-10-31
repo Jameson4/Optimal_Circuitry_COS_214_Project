@@ -36,7 +36,7 @@ Country::~Country(){
 	modTransportCounter = 0;
 }
 
-// set mode of transport
+// add mode of transport
 void Country::addCountryModeOfTransport(Theater* theaters, bool isOperational, int damage, int health, string type) {
 	// string type: {Water, Air, Land } determines what mode of tranport is being added
 	if(modTransportCounter < 3) {  //create at most 3 modes of transportation  
