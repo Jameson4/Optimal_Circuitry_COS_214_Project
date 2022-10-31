@@ -8,5 +8,5 @@ void AttackState::handleChange(ConcreteSubject* c) {
 }
 
 string AttackState::getBattleState() {
-    return "County is currently in Defensive Mode ";
+    return "currently in Attack State";
 }

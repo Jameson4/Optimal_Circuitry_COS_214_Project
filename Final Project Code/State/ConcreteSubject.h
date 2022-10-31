@@ -1,11 +1,12 @@
 #ifndef CONCRETESUBJECT_H
 #define CONCRETESUBJECT_H
 
+#include "Subject.h"
+#include "ConcreteObserver.h"
 #include <iostream>
 using namespace std; 
-#include "BattleState.h"
 
-class ConcreteSubject {
+class ConcreteSubject: public Subject {
 public:
     ConcreteSubject();
     ~ConcreteSubject();

@@ -2,8 +2,7 @@
 #include <iostream>
 using namespace std;
 #include "ConcreteSubject.h"
-#include "DefendState.h"
-#include "AttackState.h"
+#include "Subject.h"
 
 
 ConcreteSubject::ConcreteSubject() {
