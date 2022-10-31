@@ -13,8 +13,7 @@ using namespace std;
 
 class countryFactory {
 public:
-    countryFactory();
-    ~countryFactory();
+    virtual ~countryFactory();
     virtual country* createCountry() = 0;
 };
 
