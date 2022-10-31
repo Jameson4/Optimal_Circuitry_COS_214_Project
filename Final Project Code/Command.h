@@ -29,33 +29,4 @@ class RealModeCommand : public Command {
         void execute();
 };
 
-//what i was thinking
-class PauseCommand : public Command {
-    private:
-        War* war;
-        Caretaker* carer;
-    public:
-        PauseCommand(War*,Caretaker*);
-        void execute();
-};
-
-class ResumeCommand : public Command {
-    private:
-        War* war;
-        Caretaker* carer;
-    public:
-        ResumeCommand(War*,Caretaker*);
-        void execute();
-};
-
-class UndoCommand : public Command {
-    private:
-        War* war;
-        Caretaker* carer;
-    public:
-        UndoCommand(War*,Caretaker*);
-        void execute();
-};
-
-
 #endif
