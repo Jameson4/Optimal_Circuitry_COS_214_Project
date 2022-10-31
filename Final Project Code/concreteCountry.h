@@ -16,6 +16,7 @@ private:
     int countrySize;
     int numOfTheaters; //number of theaters
     int TheaterSize; //size of each theater in relation to the country size
+    void addTheaterAndTransport();
 public:
     explicit concreteCountry(const string& name, const string& size);
     concreteCountry(string name, const string& size, int navyPersonnell, int armyPersonnell, int airforcePersonnell);

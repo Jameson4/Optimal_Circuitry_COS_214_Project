@@ -42,6 +42,7 @@ concreteCountry::concreteCountry(const string& name, const string& size) {
         airforcePersonnell = rand()%(300000-220000+1)+220000;
     }
     totalPersonnel = navyPersonnell + armyPersonnell + airforcePersonnell;
+    addTheaterAndTransport();
 }
 
 concreteCountry::concreteCountry(string name, const string& size,  int _navyPersonnell, int _armyPersonnell, int _airforcePersonnell) {
@@ -51,7 +52,26 @@ concreteCountry::concreteCountry(string name, const string& size,  int _navyPers
     armyPersonnell = _armyPersonnell;
     airforcePersonnell = _airforcePersonnell;
     totalPersonnel = navyPersonnell + armyPersonnell + airforcePersonnell;
-    
+    addTheaterAndTransport();
+}
+
+int concreteCountry::getTotalPersonnel() {
+    return totalPersonnel;
+}
+
+int concreteCountry::getArmyPersonnel() {
+    return this->armyPersonnell;
+}
+
+int concreteCountry::getNavyPersonnel() {
+    return this->navyPersonnell;
+}
+
+int concreteCountry::getAirforcePersonnel() {
+    return this->airforcePersonnell;
+}
+
+void concreteCountry::addTheaterAndTransport(){
     //Bandisa
     numOfTheaters=0.135*totalPersonnel;
     TheaterSize=0.413*totalPersonnel;
@@ -81,21 +101,4 @@ concreteCountry::concreteCountry(string name, const string& size,  int _navyPers
         }
     }
 }
-
-int concreteCountry::getTotalPersonnel() {
-    return totalPersonnel;
-}
-
-int concreteCountry::getArmyPersonnel() {
-    return this->armyPersonnell;
-}
-
-int concreteCountry::getNavyPersonnel() {
-    return this->navyPersonnell;
-}
-
-int concreteCountry::getAirforcePersonnel() {
-    return this->airforcePersonnell;
-}
-
 
