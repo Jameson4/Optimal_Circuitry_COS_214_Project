@@ -18,7 +18,7 @@ class Country: public AllianceCountry
 	Country(string name);
 	Country(string name, double size); //country name and size
 	~Country();
-	void addCountryModeOfTransport(Theater* theaters, bool isOperational, int damage, int health, string type); // add mode of transport for this current country
+	void addCountryModeOfTransport(Theater* theaters, bool isOperational, int damage, int health, string type); // add mode of transport to this country
 	ModesOfTransport* getCountryModeOfTransport(string type); // Return mode of Transport type:{Water, Air, Land } ???
 	string getName(); // return name of the country
 	void setName(string name); // set name of the country
