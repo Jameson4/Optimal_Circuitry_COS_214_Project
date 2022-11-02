@@ -6,7 +6,7 @@ class AirTheater:public Theater{
     private:    
         std::string type;
     public:
-        AirTheater(country*,int);
+        AirTheater(country *c,int s);
         void fight();
 };
 #endif

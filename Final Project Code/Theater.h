@@ -6,7 +6,7 @@
 #include "country.h"
 
 class Theater{
-    private:
+    protected:
         ModesOfTransport* ModesOfTransport;
         abstractMilitary ***Military;
         int size,numFighters;
