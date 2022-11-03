@@ -1,5 +1,8 @@
-#ifndef observer_h
-#define observer_h
+#ifndef Observer_h
+#define Observer_h
 
-class observer{};
+class Observer{
+    public:
+        virtual void update()=0;
+};
 #endif;

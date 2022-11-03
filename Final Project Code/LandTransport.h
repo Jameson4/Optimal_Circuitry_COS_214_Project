@@ -4,6 +4,6 @@
 
 class LandTransport: public ModesOfTransport{
     public:
-        LandTransport(country*,Theater*)
+        LandTransport(country*,Theater*);
 };
 #endif
