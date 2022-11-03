@@ -34,6 +34,12 @@ void LaunchReanactment::Undo() {
     UndoCommand_->execute();
 }
 
+LaunchReanactment::~LaunchReanactment() {
+    delete ResumeCommand_;
+    delete PauseCommand_;
+    delete UndoCommand_;
+}
+
 void LaunchReanactment::Pause() {
     if (!paused) {
         paused = true;
