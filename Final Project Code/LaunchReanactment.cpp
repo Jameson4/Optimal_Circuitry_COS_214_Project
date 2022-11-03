@@ -31,25 +31,13 @@ void LaunchReanactment::flipUp() {
 }
 
 void LaunchReanactment::Undo() {
-    UndoCommand_->execute();
+    if (paused) {
+        UndoCommand_->execute();
+    }
 }
 
 LaunchReanactment::~LaunchReanactment() {
     delete ResumeCommand_;
     delete PauseCommand_;
     delete UndoCommand_;
-}
-
-void LaunchReanactment::Pause() {
-    if (!paused) {
-        paused = true;
-        PauseCommand_->execute();
-    }
-}
-
-void LaunchReanactment::Resume() {
-    if (paused) {
-        paused = false;
-        ResumeCommand_->execute();
-    }
 }
