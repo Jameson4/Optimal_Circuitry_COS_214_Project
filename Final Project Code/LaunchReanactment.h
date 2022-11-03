@@ -14,6 +14,7 @@ class LaunchReanactment
     public:
         LaunchReanactment(Command*,Command*,Command*);
         LaunchReanactment(War*,Caretaker*);
+        ~LaunchReanactment();
         bool switch_();
         void flipUp();
         void flipDown();
