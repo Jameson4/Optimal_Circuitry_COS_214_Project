@@ -19,11 +19,6 @@ class LaunchReanactment
         void flipUp();
         void flipDown();
         void Undo();
-        void Pause();
-        void Resume();
 };
-
-
-
 
 #endif
