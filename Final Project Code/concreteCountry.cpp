@@ -98,17 +98,17 @@ void concreteCountry::addTheaterAndTransport() {
 }
 
 void concreteCountry::attackAir(concreteCountry *_attackCountry, int personnel) {
-    _attackCountry->_airforce->beingAttacked(personnel);
+    _attackCountry->_airforce->beingAttacked(this->_airforce->power);
     cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Airforce";
 }
 
 void concreteCountry::attackSea(concreteCountry *_attackCountry, int personnel) {
-    _attackCountry->_navy->beingAttacked(personnel);
+    _attackCountry->_navy->beingAttacked(this->_navy->power);
     cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Navy";
 }
 
 void concreteCountry::attackLand(concreteCountry *_attackCountry, int personnel) {
-    _attackCountry->_army->beingAttacked(personnel);
+    _attackCountry->_army->beingAttacked(this->_army->power);
     cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Army";
 }
 

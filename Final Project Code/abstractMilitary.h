@@ -14,7 +14,7 @@ using namespace std;
 
 class abstractMilitary {
 public:
-    int personnel, health;
+    int personnel, health, power;
     string type;
     virtual void beingAttacked(int damage) = 0;
 };
