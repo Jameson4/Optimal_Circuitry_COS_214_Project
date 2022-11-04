@@ -21,7 +21,7 @@ void SimulationMaster::reg(country *c,std::string side){
     if(side=="A"){
         for(int i=0;i<numSizeA;i++){
             if(SideACountries[i]==c){
-                sideA[i]=SideACountries[i]->getHighRankingOfficer();
+                sideA[i]=SideACountries[i]->getHighRankingOfficers();
             }
         }
     }
@@ -29,7 +29,7 @@ void SimulationMaster::reg(country *c,std::string side){
     if(side=="B"){
         for(int i=0;i<numSizeB;i++){
             if(SideBCountries[i]==c){
-                sideB[i]=SideBCountries[i]->getHighRankingOfficer();
+                sideB[i]=SideBCountries[i]->getHighRankingOfficers();
             }
         }
     }
@@ -72,7 +72,7 @@ void SimulationMaster::addCountry(country*c, std::string side){
             }
         }
         if(i<numSizeA)
-            sideA[i]=SideACountries[i]->getHighRankingOfficer();
+            sideA[i]=SideACountries[i]->getHighRankingOfficers();
         break;
     case 2:
         int i=0;
@@ -83,7 +83,7 @@ void SimulationMaster::addCountry(country*c, std::string side){
             }
         }
         if(i<numSizeB)
-            sideB[i]=SideBCountries[i]->getHighRankingOfficer();
+            sideB[i]=SideBCountries[i]->getHighRankingOfficers();
         break;
     }
 }
