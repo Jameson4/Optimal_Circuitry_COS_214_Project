@@ -1,9 +1,12 @@
 #include "NavyGeneral.h"
 
 void NavyGeneral::update(){
+    int before =NumTroopsAlive;
     for(int i=0;i<sizeOfTroops;i++)
         if(troops[i] && troops[i]->getHealth()>0)
             NumTroopsAlive++;
+    if(before!=NumTroopsAlive)
+        report();
 }
 int NavyGeneral::getNumTroopsAlive(){
     return NumTroopsAlive;
@@ -24,4 +27,13 @@ NavyGeneral::NavyGeneral(int s,country *c,std::string name){
         troops=new abstractMilitary*[sizeOfTroops];
         for(int i=0;i<sizeOfTroops;i++)
             troops[i]=NULL;
+}
+void NavyGeneral::setPhase(std::string p){
+        phase=p;
+}
+int NavyGeneral::getNumEnrolled(){
+    return numEnrolled;
+}
+void NavyGeneral::report(){
+    mediator->notify();
 }

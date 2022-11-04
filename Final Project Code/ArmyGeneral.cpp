@@ -1,9 +1,12 @@
 #include "ArmyGeneral.h"
 
 void ArmyGeneral::update(){
+    int before =NumTroopsAlive;
     for(int i=0;i<sizeOfTroops;i++)
         if(troops[i] && troops[i]->getHealth()>0)
             NumTroopsAlive++;
+    if(before!=NumTroopsAlive)
+        report();
 }
 int ArmyGeneral::getNumTroopsAlive(){
     return NumTroopsAlive;
@@ -24,4 +27,13 @@ ArmyGeneral::ArmyGeneral(int s,country *c,std::string n){
         troops=new abstractMilitary*[sizeOfTroops];
         for(int i=0;i<sizeOfTroops;i++)
             troops[i]=NULL;
+}
+void ArmyGeneral::setPhase(std::string p){
+        phase=p;
+}
+int ArmyGeneral::getNumEnrolled(){
+    return numEnrolled;
+}
+void ArmyGeneral::report(){
+    mediator->notify();
 }

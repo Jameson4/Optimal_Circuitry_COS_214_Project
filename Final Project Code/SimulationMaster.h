@@ -1,18 +1,21 @@
 #ifndef SimulationMaster_h
 #define SimulationMaster_h
 #include "Mediator.h"
+#include "country.h"
 #include <string>
 class SimulationMaster:public Mediator{
     private:
-        observer* sideA;
-        observer* sideB;
+        Observer** sideA;
+        Observer** sideB;
         std::string phases[6];
+        country **SideACountries;
+        country **SideBCountries;
     public:
-        SimulationMaster(observer* sideA,observer* sidB);
+        SimulationMaster(Observer* sideA,Observer* sidB);
         void notify();
-        void update();
-        void reg(observer *o);
-        void DeReg(observer *o);
+        void reg(Observer *o);
+        void DeReg(Observer *o);
         void phaseChange();
+        void addCountry(country*c, std::string side);
 };
 #endif
