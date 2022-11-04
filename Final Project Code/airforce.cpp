@@ -14,3 +14,4 @@ airforce::airforce(int _personnel, string _type) {
 void airforce::beingAttacked(int damage) {
     health -= damage;
 }
+

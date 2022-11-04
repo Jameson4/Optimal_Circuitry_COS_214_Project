@@ -3,3 +3,7 @@
 //
 
 #include "abstractMilitary.h"
+
+int abstractMilitary::getHealth() {
+    return health;
+}

@@ -17,6 +17,7 @@ public:
     int personnel, health, power;
     string type;
     virtual void beingAttacked(int damage) = 0;
+    int getHealth();
 };
 
 
