@@ -29,6 +29,3 @@ void DesignModeCommand::pause() {
 void DesignModeCommand::undo() {
     war_->restore(carer->retrieve());
 }
-
-RealModeCommand::RealModeCommand() {}
-void RealModeCommand::execute() {}
