@@ -1,7 +1,7 @@
 #include "SimulationMaster.h"
 
-//Ask mathew for the final observer UML
- SimulationMaster::SimulationMaster(observer* sideA,observer* sidB){
+//Ask mathew for the final Observer UML
+ SimulationMaster::SimulationMaster(Observer* sideA,Observer* sidB){
     this->sideA=sideA;
     this->sideB=sideB;
     for(int i=1;i<6;i++)
@@ -13,12 +13,15 @@ void SimulationMaster::notify(){
 void SimulationMaster::update(){
 
 }
-void SimulationMaster::reg(observer *o){
+void SimulationMaster::reg(Observer *o){
 
 }
-void SimulationMaster::DeReg(observer *o){
+void SimulationMaster::DeReg(Observer *o){
 
 }
 void SimulationMaster::phaseChange(){
+
+}
+void SimulationMaster::addCountry(country*c, std::string side){
 
 }
