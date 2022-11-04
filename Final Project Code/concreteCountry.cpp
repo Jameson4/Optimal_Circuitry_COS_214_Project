@@ -69,34 +69,49 @@ void concreteCountry::setMilitaries(abstractMilitary* _air, abstractMilitary* _a
 }
 
 //Bandisa Add On
-void concreteCountry::addTheaterAndTransport(){
+void concreteCountry::addTheaterAndTransport() {
     //Bandisa
-    numOfTheaters=0.135*totalPersonnel;
-    TheaterSize=0.413*totalPersonnel;
-    Theaters = new Theater*[numOfTheaters];
-    Transports= new ModesOfTransport*[numOfTheaters];
+    numOfTheaters = 0.135 * totalPersonnel;
+    TheaterSize = 0.413 * totalPersonnel;
+    Theaters = new Theater *[numOfTheaters];
+    Transports = new ModesOfTransport *[numOfTheaters];
     //creating different theater types
     //creating different transport types and linking it to the country and corresponding theater
-    for(int i=0;i<numOfTheaters;i++){
-        if(i%2==0){
-            Theaters[i]=new LandTheater(this,TheaterSize);
-            Transports[i]=new LandTransport(this,Theaters[i]);
+    for (int i = 0; i < numOfTheaters; i++) {
+        if (i % 2 == 0) {
+            Theaters[i] = new LandTheater(this, TheaterSize);
+            Transports[i] = new LandTransport(this, Theaters[i]);
+            Theaters[i]->addModeOfTransport(Transports[i]);
+        } else if (i % 3 == 0) {
+            Theaters[i] = new AirTheater(this, TheaterSize);
+            Transports[i] = new AirSpaceTransport(this, Theaters[i]);
+            Theaters[i]->addModeOfTransport(Transports[i]);
+        } else {
+            Theaters[i] = new WaterTheater(this, TheaterSize);
+            Transports[i] = new WaterTransport(this, Theaters[i]);
             Theaters[i]->addModeOfTransport(Transports[i]);
         }
-        else
-        if(i%3==0){
-            Theaters[i]=new AirTheater(this,TheaterSize);
-            Transports[i]=new AirSpaceTransport(this,Theaters[i]);
-            Theaters[i]->addModeOfTransport(Transports[i]);
-        }
-        else{
-            Theaters[i]=new WaterTheater(this,TheaterSize);
-            Transports[i]=new WaterTransport(this,Theaters[i]);
-            Theaters[i]->addModeOfTransport(Transports[i]);
-        }
-        if(i>0){
-            Theaters[i-1]->add(Theaters[i]); //creating chain for chain of command
+        if (i > 0) {
+            Theaters[i - 1]->add(Theaters[i]); //creating chain for chain of command
         }
     }
+}
+
+void concreteCountry::attackAir(concreteCountry *_attackCountry, int personnel) {
+    _attackCountry->_airforce->beingAttacked(personnel);
+    cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Airforce";
+}
+
+void concreteCountry::attackSea(concreteCountry *_attackCountry, int personnel) {
+    _attackCountry->_navy->beingAttacked(personnel);
+    cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Navy";
+}
+
+void concreteCountry::attackLand(concreteCountry *_attackCountry, int personnel) {
+    _attackCountry->_army->beingAttacked(personnel);
+    cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Army";
+}
+
+
 
 

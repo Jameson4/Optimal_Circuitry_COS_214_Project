@@ -32,5 +32,5 @@ int main() {
     milFactory->createMilitary(China);
     cout<<"\n";
 
-
+    ZA->attackAir(ENG,200);
 }

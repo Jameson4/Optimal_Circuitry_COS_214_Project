@@ -51,9 +51,9 @@ public:
 
     void print() override;
     //Israel Add On
-    void attackAir(int personnel);
-    void attackSea(int personnel);
-    void attackLand(int personnel);
+    void attackAir(concreteCountry* _attackCountry, int personnel);
+    void attackSea(concreteCountry* _attackCountry, int personnel);
+    void attackLand(concreteCountry* _attackCountry, int personnel);
     void attackRoads(country*);
     void sendReinforcements(string type, int count);
     void buildRoad(country*);

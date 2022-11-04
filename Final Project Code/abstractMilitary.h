@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include "country.h"
+#include "abstractMilitary.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ class abstractMilitary {
 public:
     int personnel, health;
     string type;
+    virtual void beingAttacked(int damage) = 0;
 };
 
 

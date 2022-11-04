@@ -9,3 +9,7 @@ navy::navy(int _personnel, string _type) {
     type = _type;
     health = personnel * 0.15 * 5;
 }
+
+void navy::beingAttacked(int damage) {
+    health -= damage;
+}

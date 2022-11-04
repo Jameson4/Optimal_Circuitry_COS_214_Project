@@ -9,3 +9,7 @@ airforce::airforce(int _personnel, string _type) {
     type = _type;
     health = personnel * 0.1 * 5;
 }
+
+void airforce::beingAttacked(int damage) {
+    health -= damage;
+}

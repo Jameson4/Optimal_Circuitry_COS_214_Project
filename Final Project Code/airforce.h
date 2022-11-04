@@ -12,6 +12,7 @@
 class airforce : public abstractMilitary{
 public:
     airforce(int _personnel, string _type);
+    void beingAttacked(int damage) override;
 };
 
 

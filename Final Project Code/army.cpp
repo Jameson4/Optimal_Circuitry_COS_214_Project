@@ -9,3 +9,7 @@ army::army(int _personnel, string _type) {
     type = _type;
     health = personnel * 0.2 * 5;
 }
+
+void army::beingAttacked(int damage) {
+    health -= damage;
+}
