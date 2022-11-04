@@ -6,18 +6,19 @@
 #define OPTIMAL_CIRCUITRY_COS_214_PROJECT_MILITARYFACTORY_H
 
 #include "abstractMilitaryFactory.h"
+#include "concreteCountry.h"
 #include "airforce.h"
 #include "navy.h"
 #include "army.h"
 
 class militaryFactory : public abstractMilitaryFactory{
 private:
-    airforce* _airforce;
-    navy* _navy;
-    army* _army;
+    abstractMilitary* _airforceTemp;
+    abstractMilitary* _navyTemp;
+    abstractMilitary* _armyTemp;
 public:
     militaryFactory();
-    void createMilitary(country* _country) override;
+    void createMilitary(concreteCountry* _country) override;
 };
 
 

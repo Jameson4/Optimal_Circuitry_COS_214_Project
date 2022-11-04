@@ -32,4 +32,5 @@ int main() {
     milFactory->createMilitary(China);
     cout<<"\n";
 
+
 }

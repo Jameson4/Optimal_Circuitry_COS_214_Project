@@ -7,6 +7,7 @@
 
 #include <String>
 #include "abstractMilitary.h"
+#include "country.h"
 
 class airforce : public abstractMilitary{
 public:

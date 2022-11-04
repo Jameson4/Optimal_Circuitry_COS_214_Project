@@ -7,13 +7,14 @@
 
 #include <vector>
 #include "abstractMilitary.h"
+#include "concreteCountry.h"
 #include "country.h"
 
 using namespace std;
 
 class abstractMilitaryFactory {
 public:
-    virtual void createMilitary(country* _country) = 0;
+    virtual void createMilitary(concreteCountry* _country) = 0;
 };
 
 

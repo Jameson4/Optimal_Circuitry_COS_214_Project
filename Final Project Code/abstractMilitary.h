@@ -7,12 +7,13 @@
 
 #include <iostream>
 #include <string>
+#include "country.h"
 
 using namespace std;
 
 class abstractMilitary {
 public:
-    int personnel;
+    int personnel, health;
     string type;
 };
 
