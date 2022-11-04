@@ -3,7 +3,8 @@
  */
 #include "ModesOfTransport.h"
 
-ModesOfTransport( Theater* theaters,bool isOperational,int damage,int health): theaters(theaters), isOperational(isOperational),damage(damage),health(health){};
+ModesOfTransport::ModesOfTransport(Theater* theaters,bool isOperational,int damage,int health): theaters(theaters), isOperational(isOperational),damage(damage),health(health){};
+
 bool ModesOfTransport::getsOperational(){
     return (health>0);
 }

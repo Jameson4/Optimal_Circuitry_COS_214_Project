@@ -10,7 +10,7 @@
 
 class Theater{
     protected:
-        ModesOfTransport* ModesOfTransport;
+        static ModesOfTransport* ModesOfTransport;
         abstractMilitary ***Military;
         int size,numFighters;
         country *country;

@@ -8,6 +8,7 @@ Theater::Theater(class country *c,int s){
     this->country=c;
     this->size=s;
 }
+
 Theater::~Theater(){
     for(int i=0;i<size;i++){
         for(int j=0;j<size;j++){
@@ -45,8 +46,9 @@ void Theater::addMilitary(abstractMilitary* m){
         }
     }    
 }
-void Theater::addModeOfTransport(ModesOfTransport* m){
-    ModesOfTransport=m;
+
+void Theater::addModeOfTransport(class ModesOfTransport* m){
+    ModesOfTransport = m;
 }
 
 bool Theater::isEmpty(){
