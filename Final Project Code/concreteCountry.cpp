@@ -114,4 +114,3 @@ void concreteCountry::attackLand(concreteCountry *_attackCountry, int personnel)
 
 
 
-

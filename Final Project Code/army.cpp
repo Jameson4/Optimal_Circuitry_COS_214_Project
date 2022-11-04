@@ -13,4 +13,7 @@ army::army(int _personnel, string _type) {
 
 void army::beingAttacked(int damage) {
     health -= damage;
+    if(health <= 0){
+        cout<<"Army has been eliminated\n";
+    }
 }

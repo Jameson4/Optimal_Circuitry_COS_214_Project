@@ -21,6 +21,7 @@ public:
     virtual string getName() = 0;
     virtual void print() = 0;
     virtual void setMilitaries(abstractMilitary* _air, abstractMilitary* _arm, abstractMilitary* _nav) = 0;
+
 protected:
     int navyPersonnell, armyPersonnell, airforcePersonnell;
     string countryName, countrySize;

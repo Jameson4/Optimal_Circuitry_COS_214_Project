@@ -13,5 +13,8 @@ airforce::airforce(int _personnel, string _type) {
 
 void airforce::beingAttacked(int damage) {
     health -= damage;
+    if(health <= 0){
+        cout<<"Airforce has been eliminated\n";
+    }
 }
 

@@ -8,6 +8,9 @@
 #include <String>
 #include "abstractMilitary.h"
 #include "country.h"
+#include <iostream>
+
+using namespace std;
 
 class airforce : public abstractMilitary{
 public:

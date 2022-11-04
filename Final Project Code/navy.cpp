@@ -13,4 +13,7 @@ navy::navy(int _personnel, string _type) {
 
 void navy::beingAttacked(int damage) {
     health -= damage;
+    if(health <= 0){
+        cout<<"Navy has been eliminated\n";
+    }
 }
