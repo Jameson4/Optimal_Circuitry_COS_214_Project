@@ -22,7 +22,7 @@ DesignModeCommand::~DesignModeCommand() {
 
 void DesignModeCommand::execute() {
     while (true) {
-        war_->resume();
+        carer->add(war_->resume());
         cout<<"Enter Command!: \n";
         string c = "";
         cin>>c;
@@ -39,7 +39,7 @@ void DesignModeCommand::execute() {
     }
 }
 void DesignModeCommand::pause() {
-    carer->add(war->stop());
+    war->stop();
 }
 void DesignModeCommand::undo() {
     war_->restore(carer->retrieve());
