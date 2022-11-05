@@ -9,11 +9,11 @@
 PauseCommand::PauseCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
 
 /**
- * @brief Pauses and saves current state of the War and stores the state with the caretaker
+ * @brief Invokes Pause operation on War object
  * 
  */
 void PauseCommand::execute() {
-    carer->add(war->stop());
+    war->stop();
 }
 
 
