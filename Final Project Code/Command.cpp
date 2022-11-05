@@ -2,9 +2,24 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * @brief Construct a new Design Mode Command:: Design Mode Command object
+ * 
+ * @param w 
+ */
 DesignModeCommand::DesignModeCommand(War* w) : war_(w) {
     carer = new Caretaker();
 }
+
+/**
+ * @brief Destroy the Design Mode Command:: Design Mode Command object
+ * 
+ */
+DesignModeCommand::~DesignModeCommand() {
+    delete carer;
+    war_ = 0;
+}
+
 void DesignModeCommand::execute() {
     while (true) {
         war_->resume();
