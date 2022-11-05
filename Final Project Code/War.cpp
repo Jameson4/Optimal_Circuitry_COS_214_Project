@@ -13,15 +13,15 @@ War::War(State s) {
     *state_ = s;
 }
 
-Memento War::stop() {
+void War::stop() {
     war = false;
     cout<<"War has stopped"<<endl;
-    return createMemento();
 }
 
-void War::resume() {
+Memento War::resume() {
     war = true;
     cout<<"War has resumed"<<endl;
+    return createMemento();
 }
 
 Memento War::createMemento() {
