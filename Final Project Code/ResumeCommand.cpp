@@ -10,11 +10,11 @@ using namespace std;
 ResumeCommand::ResumeCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
 
 /**
- * @brief invokes resume operation on War object
+ * @brief Saves current state of the War and stores the state with the caretaker and invokes resume operation on War object
  * 
  */
 void ResumeCommand::execute() {
-    war->resume();
+    carer->add(war->resume());
 }
 
 
