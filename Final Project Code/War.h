@@ -12,8 +12,8 @@ class War {
     public:
         War();
         War(State);
-        Memento stop();
-        void resume();
+        void stop();
+        Memento resume();
         Memento createMemento();
         void restore(Memento);
         void step(std::string);
