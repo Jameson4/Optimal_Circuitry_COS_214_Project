@@ -4,6 +4,10 @@
 #include "War.h"
 #include "Caretaker.h"
 
+/**
+ * @brief Invoker, asks commands to carry out given requests
+ * 
+ */
 class LaunchReanactment
 {
     private:
