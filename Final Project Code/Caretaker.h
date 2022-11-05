@@ -3,6 +3,10 @@
 #include "Memento.h"
 #include <list>
 
+/**
+ * @brief Responsible for safekeeping of a mementos internal state
+ * 
+ */
 class Caretaker {
     private:
         std::list<Memento> list;
