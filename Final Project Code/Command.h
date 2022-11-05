@@ -4,6 +4,10 @@
 #include "War.h"
 #include "Caretaker.h"
 
+/**
+ * @brief Command: interface for executing operations, defines binding between recievers and operations
+ * 
+ */
 class Command {
     public:
         virtual void execute() =0;
