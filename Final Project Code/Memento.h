@@ -2,17 +2,19 @@
 #define MEMENTO_H
 #include "State.h"
 
+
 /**
  * @brief stores internal state of War
  * 
  */
 class Memento {
-    friend class War
+    friend class War;
     private:
-        State state_;
-        State getState();
+        State* state_;
+        State* getState();
     public:
-        Memento(State);
+        Memento(int i);
+        ~Memento();
         
 };
 
