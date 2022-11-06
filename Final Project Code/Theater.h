@@ -4,13 +4,15 @@
 #include "abstractMilitary.h"
 #include "ModesOfTransport.h"
 #include "country.h"
-
+class ModesOfTransport;
+class country;
+class abstractMilitary;
 class Theater{
     protected:
-        ModesOfTransport* ModesOfTransport;
+        ModesOfTransport* modesOfTransport;
         abstractMilitary ***Military;
         int size,numFighters;
-        country *country;
+        country *Country;
         Theater *next;
     public:
         Theater(country *c,int s);

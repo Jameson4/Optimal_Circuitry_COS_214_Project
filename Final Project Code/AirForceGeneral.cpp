@@ -19,9 +19,9 @@ void AirForceGeneral::enrollTroop(abstractMilitary* t){
     }
 }
 AirForceGeneral::AirForceGeneral(int s,country *c,std::string n){
-        NumTroopsAlive=n;
+        NumTroopsAlive=0;
         sizeOfTroops=s;
-        country=c;
+        Country=c;
         name=n;
         numEnrolled=0;
         troops=new abstractMilitary*[sizeOfTroops];

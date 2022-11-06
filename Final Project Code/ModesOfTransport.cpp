@@ -1,6 +1,6 @@
 #include "ModesOfTransport.h"
 
-ModesOfTransport( Theater* theaters,bool isOperational,int damage,int health): theaters(theaters), isOperational(isOperational),damage(damage),health(health){};
+ModesOfTransport::ModesOfTransport( Theater* theaters,bool isOperational,int damage,int health): theaters(theaters), isOperational(isOperational),damage(damage),health(health){};
 bool ModesOfTransport::getsOperational(){
     return (health>0);
 }
@@ -9,4 +9,8 @@ void ModesOfTransport::setisOperational(bool isOperational){
 }
 void ModesOfTransport::attack(){
 
+}
+ModesOfTransport::ModesOfTransport(country* c,Theater*t){
+    Country=c;
+    theaters=t;
 }

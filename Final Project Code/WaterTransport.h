@@ -4,6 +4,6 @@
 
 class WaterTransport: public ModesOfTransport{
     public:
-        WaterTransport(country*,Theater*)
+        WaterTransport(country*,Theater*);
 };
 #endif

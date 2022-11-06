@@ -21,7 +21,7 @@ void NavyGeneral::enrollTroop(abstractMilitary* t){
 NavyGeneral::NavyGeneral(int s,country *c,std::string name){
         NumTroopsAlive=0;
         sizeOfTroops=s;
-        country=c;
+        Country=c;
         this->name=name;
         numEnrolled=0;
         troops=new abstractMilitary*[sizeOfTroops];

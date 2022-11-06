@@ -1,6 +1,8 @@
 #ifndef Mediator_h
 #define Mediator_h
 #include"Observer.h"
+
+class Observer;
 class Mediator{
     public:
         virtual void reg(Observer *c)=0;

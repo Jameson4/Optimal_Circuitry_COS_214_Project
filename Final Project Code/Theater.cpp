@@ -3,7 +3,7 @@
 
 
 Theater::Theater(country *c,int s){
-    this->country=c;
+    this->Country=c;
     this->size=s;
 }
 Theater::~Theater(){
@@ -34,7 +34,7 @@ void Theater::addMilitary(abstractMilitary* m){
                 Military[i][j]=m;
                 added=true;
                 numFighters++;
-                return
+                return;
             }
             else{
                 i=rand()%(size+1)+0;
@@ -44,7 +44,7 @@ void Theater::addMilitary(abstractMilitary* m){
     }    
 }
 void Theater::addModeOfTransport(ModesOfTransport* m){
-    ModesOfTransport=m;
+    modesOfTransport=m;
 }
 
 bool Theater::isEmpty(){

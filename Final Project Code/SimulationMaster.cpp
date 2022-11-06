@@ -1,5 +1,5 @@
 #include "SimulationMaster.h"
-
+#include <sstream>
 //Ask mathew for the final Observer UML
 //  SimulationMaster::SimulationMaster(Observer* sideA,Observer* sidB){
 //     this->sideA=sideA;
@@ -56,6 +56,7 @@ void SimulationMaster::phaseChange(){
 }
 void SimulationMaster::addCountry(country*c, std::string side){
     int s;
+    int i=0;
     if(side=="A")
         s=1;
     else
@@ -63,33 +64,39 @@ void SimulationMaster::addCountry(country*c, std::string side){
         s=2;
     switch (s)
     {
-    case 1:
-        int i=0;
-        for(;i<numSizeA;i++){
-            if(!SideACountries[i]){
-                 SideACountries[i]=c;
-                 break;
+        case 1:
+            i=0;
+            for(;i<numSizeA;i++){
+                if(!SideACountries[i]){
+                     SideACountries[i]=c;
+                     break;
+                }
             }
-        }
-        if(i<numSizeA)
-            sideA[i]=SideACountries[i]->getHighRankingOfficers();
-        break;
-    case 2:
-        int i=0;
-        for(;i<numSizeB;i++){
-            if(!SideBCountries[i]){
-                 SideBCountries[i]=c;
-                 break;
+            if(i<numSizeA)
+                sideA[i]=SideACountries[i]->getHighRankingOfficers();
+            break;
+        case 2:
+            i=0;
+            for(;i<numSizeB;i++){
+                if(!SideBCountries[i]){
+                     SideBCountries[i]=c;
+                     break;
+                }
             }
-        }
-        if(i<numSizeB)
-            sideB[i]=SideBCountries[i]->getHighRankingOfficers();
-        break;
+            if(i<numSizeB)
+                sideB[i]=SideBCountries[i]->getHighRankingOfficers();
+            break;
     }
 }
 SimulationMaster::SimulationMaster(int A,int B){
     numSizeA=A;
     numSizeB=B;
+    stringstream s;
+    for(int i=1;i<6;i++){   //intilising phase array
+        s<<i;
+        this->phases[i-1]="Phase "+s.str();
+        s.clear();
+    }
     SideACountries=new country*[numSizeA];
     SideBCountries=new country*[numSizeB];
     sideA=new Observer**[numSizeA];

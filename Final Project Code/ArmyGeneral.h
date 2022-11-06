@@ -7,7 +7,7 @@ class ArmyGeneral: public Observer{
         abstractMilitary** troops;
         int NumTroopsAlive,numEnrolled;
         int sizeOfTroops;
-        country *country;
+        country *Country;
         std::string name,phase;
     public:
         void update();
