@@ -1,5 +1,7 @@
 #include "UndoCommand.h"
+#include <iostream>
 using namespace std;
+
 
 /**
  * @brief Construct a new Undo Command:: Undo Command object
@@ -14,7 +16,16 @@ UndoCommand::UndoCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
  * 
  */
 void UndoCommand::execute() {
-    war->restore(carer->retrieve());
+    cout<<"Resturning to previous state of war: \n";
+    Memento* temp = carer->retrieve();
+    if (temp != NULL) {
+        war->restore(carer->retrieve());
+        carer->pop();
+        cout<<"Previous State: "<<war->getState()->currentState<<endl;
+    } else {
+        cout<<"No more saves available\n";
+    }
+    
 }
 
 
