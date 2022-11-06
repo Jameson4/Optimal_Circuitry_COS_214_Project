@@ -4,7 +4,6 @@
 #include "PauseCommand.h"
 #include "UndoCommand.h"
 using namespace std;
-
 /**
  * @brief Construct a new Launch Reanactment:: Launch Reanactment object
  * 
@@ -37,7 +36,6 @@ LaunchReanactment::~LaunchReanactment() {
     delete UndoCommand_;
 }
 
-
 /**
  * @brief asks command to carry out a request based on [paused] value
  * 
@@ -55,6 +53,7 @@ bool LaunchReanactment::switch_() {
     return paused;
 }
 
+
 /**
  * @brief asks PauseCommand to execute
  * @link PauseCommand::execute()
@@ -63,6 +62,7 @@ bool LaunchReanactment::switch_() {
 void LaunchReanactment::flipDown() {
     PauseCommand_->execute();
 }
+
 
 /**
  * @brief asks ResumeCommand to execute
@@ -73,15 +73,13 @@ void LaunchReanactment::flipUp() {
     ResumeCommand_->execute();
 }
 
+
 /**
  * @brief asks UndoCommand to execute
  * @link UndoCommand::execute()
  * 
  */
 void LaunchReanactment::Undo() {
-    if (paused) {
-        UndoCommand_->execute();
-    }
+    if (!paused) //since paused switched
+    UndoCommand_->execute();
 }
-
-
