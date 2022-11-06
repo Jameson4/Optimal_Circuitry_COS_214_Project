@@ -1,8 +1,8 @@
-main: main.o LaunchReanactment.o State.o Memento.o Caretaker.o War.o Command.o ResumeCommand.o PauseCommand.o UndoCommand.o
-	g++ -o main main.o LaunchReanactment.o State.o Memento.o Caretaker.o War.o Command.o ResumeCommand.o PauseCommand.o UndoCommand.o
+test: test.o LaunchReanactment.o State.o Memento.o Caretaker.o War.o Command.o ResumeCommand.o PauseCommand.o UndoCommand.o
+	g++ -o test test.o LaunchReanactment.o State.o Memento.o Caretaker.o War.o Command.o ResumeCommand.o PauseCommand.o UndoCommand.o
 
-main.o: main.cpp LaunchReanactment.h Command.h War.h Caretaker.h
-	g++ -c main.cpp
+test.o: test.cpp LaunchReanactment.h Command.h War.h Caretaker.h
+	g++ -c test.cpp
 	
 LaunchReanactment.o: LaunchReanactment.cpp LaunchReanactment.h Command.h
 	g++ -c LaunchReanactment.cpp
@@ -31,8 +31,11 @@ PauseCommand.o: PauseCommand.cpp PauseCommand.h Command.h
 UndoCommand.o: UndoCommand.cpp UndoCommand.h Command.h
 	g++ -c UndoCommand.cpp
 
-run: main
-	./main
+run: test
+	./test
+	
+clear: *.o
+	rm *.o test
 	
 clear: *.o
 	rm *.o main
