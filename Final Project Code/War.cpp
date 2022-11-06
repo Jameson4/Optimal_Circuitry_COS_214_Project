@@ -16,22 +16,27 @@ War::War(State s) {
 void War::stop() {
     war = false;
     cout<<"War has stopped"<<endl;
+    
 }
 
-Memento War::resume() {
+Memento* War::resume() {
     war = true;
     cout<<"War has resumed"<<endl;
     return createMemento();
 }
 
-Memento War::createMemento() {
-    return new Memento(*state_);
+Memento* War::createMemento() {
+    return new Memento(state_->currentState);
 }
 
-void War::restore(Memento mem) {
-    *state_ = mem.getState();
+void War::restore(Memento* mem) {
+    state_ = mem->state_;
 }
 
-void War::step(string s) {
-    cout<<s<<endl;
+void War::step() {
+    cout<<"Current State: "<<++state_->currentState<<endl;
+}
+
+State* War::getState() {
+    return state_;
 }
