@@ -1,6 +1,8 @@
 #include "Caretaker.h"
 #include "Memento.h"
+#include <iostream>
 using namespace std;
+
 
 /**
  * @brief Construct a new Caretaker:: Caretaker object
@@ -8,12 +10,13 @@ using namespace std;
  */
 Caretaker::Caretaker() {}
 
+
 /**
  * @brief adds Memento object to list
  * 
  * @param mem 
  */
-void Caretaker::add(Memento mem) {
+void Caretaker::add(Memento* mem) {
     list.push_back(mem);
 }
 
@@ -22,8 +25,18 @@ void Caretaker::add(Memento mem) {
  * 
  * @return Memento 
  */
-Memento Caretaker::retrieve() {
-    Memento temp = *list.end();
-    list.pop_back();
+Memento* Caretaker::retrieve() {
+    if (list.empty()) {
+        return NULL;
+    }
+    Memento* temp = list.back();
     return temp;
+}
+
+/**
+ * @brief to avoid seg fault such that the memento isnt destroyed before war can War::restore(Memento* mem), used in UndoCommand::execute()
+ * 
+ */
+void Caretaker::pop() {
+    list.pop_back();
 }
