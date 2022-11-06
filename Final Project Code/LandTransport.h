@@ -5,5 +5,6 @@
 class LandTransport: public ModesOfTransport{
     public:
         LandTransport(country*,Theater*);
+        void transport(abstractMilitary *troop);
 };
 #endif

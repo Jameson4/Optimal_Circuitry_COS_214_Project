@@ -5,5 +5,6 @@
 class WaterTransport: public ModesOfTransport{
     public:
         WaterTransport(country*,Theater*);
+        void transport(abstractMilitary *troop);
 };
 #endif

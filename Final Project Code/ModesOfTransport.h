@@ -4,7 +4,7 @@
 class country;
 class Theater;
 class ModesOfTransport{
-    private:
+    protected:
         Theater* theaters;
         bool isOperational;
         int damage;
@@ -16,6 +16,7 @@ class ModesOfTransport{
         bool getsOperational();
         void setisOperational(bool isOperational);
         void attack();
+        virtual void transport(abstractMilitary *troop)=0;
 };
 
 #endif

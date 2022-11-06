@@ -6,5 +6,6 @@
 class AirSpaceTransport: public ModesOfTransport{
     public:
         AirSpaceTransport(country*,Theater*);
+        void transport();
 };
 #endif
