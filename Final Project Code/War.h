@@ -2,21 +2,25 @@
 #define WAR_H
 #include "State.h"
 #include "Memento.h"
+#include <string>
+using namespace std;
 
-//just a placeholder
+///just a placeholder
 class War {
-    friend class Memento
+    friend class Memento;
     private:
         bool war;
         State* state_;
     public:
         War();
         War(State);
+        ~War() {}
         void stop();
-        Memento resume();
-        Memento createMemento();
-        void restore(Memento);
-        void step(std::string);
+        Memento* resume();
+        Memento* createMemento();
+        void restore(Memento*);
+        void step();
+        State* getState();
 };
 
 #endif
