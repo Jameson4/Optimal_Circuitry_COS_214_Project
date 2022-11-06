@@ -9,11 +9,12 @@
  */
 class Caretaker {
     private:
-        std::list<Memento> list;
+        std::list<Memento*> list;
     public:
         Caretaker();
-        void add(Memento);
-        Memento retrieve();
+        void add(Memento*);
+        Memento* retrieve();
+        void pop();
 
 };
 
