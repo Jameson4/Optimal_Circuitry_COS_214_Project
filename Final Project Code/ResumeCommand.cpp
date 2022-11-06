@@ -1,5 +1,7 @@
 #include "ResumeCommand.h"
+#include <iostream>
 using namespace std;
+
 
 /**
  * @brief Construct a new Resume Command:: Resume Command object
@@ -14,6 +16,7 @@ ResumeCommand::ResumeCommand(War* w, Caretaker* c) : war(w) , carer(c) {}
  * 
  */
 void ResumeCommand::execute() {
+    cout<<"Saving current state of war: "<<endl<<"Current State: "<<war->getState()->currentState<<endl;
     carer->add(war->resume());
 }
 
