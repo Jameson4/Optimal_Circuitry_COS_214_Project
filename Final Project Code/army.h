@@ -11,6 +11,7 @@ class army : public abstractMilitary {
 public:
     army(int _personnel, string _type);
     void beingAttacked(int damage) override;
+
 };
 
 
