@@ -7,6 +7,7 @@
 
 #include <string>
 #include "abstractMilitary.h"
+#include "ModesOfTransport.h"
 
 using namespace std;
 class abstractMilitary;
