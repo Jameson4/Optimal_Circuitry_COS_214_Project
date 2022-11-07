@@ -225,3 +225,56 @@ void concreteCountry::createMilitary(){
         _airforce[i]=new airforce(i+1,"AIR Force");
     }
 }
+
+void concreteCountry::transport(int troops,concreteCountry *_attackCountry){
+    int numT = troops/3;
+    //transport equal number of troops to all theatres
+     for(int i=0;i<_attackCountry->getnumOfTheaters() && i<numOfTheaters;i++){
+        if (i % 2 == 0 && i % 3!=0) {
+            //remember to delete previous theater
+            for(int j=0;j<numT;j++)
+                Transports[i]->transport(_army[j]);
+        } else if (i % 3 == 0) {
+            for(int j=0;j<numT;j++)
+                if( Transports[i])
+                Transports[i]->transport(_airforce[j]);
+        } else {
+            for(int j=0;j<numT;j++)
+                if( Transports[i])
+                Transports[i]->transport(_navy[j]);
+        }
+     }
+}
+void concreteCountry::transportAir(int troops,concreteCountry *_attackCountry){
+    int numT = troops/3;
+    //transport equal number of troops to all theatres
+     for(int i=0;i<_attackCountry->getnumOfTheaters() && i<numOfTheaters;i++){
+        if (i % 3 == 0) {
+            for(int j=0;j<numT;j++)
+                if( Transports[i])
+                Transports[i]->transport(_airforce[j]);
+        } 
+     }
+}void concreteCountry::transportArmy(int troops,concreteCountry *_attackCountry){
+    int numT = troops/3;
+    //transport equal number of troops to all theatres
+     for(int i=0;i<_attackCountry->getnumOfTheaters() && i<numOfTheaters;i++){
+        if (i % 2 == 0 && i % 3!=0) {
+            //remember to delete previous theater
+            for(int j=0;j<numT;j++)
+                if( Transports[i])
+                Transports[i]->transport(_army[j]);
+         } 
+    }
+}
+void concreteCountry::transportAirForce(int troops,concreteCountry *_attackCountry){
+    int numT = troops/3;
+    //transport equal number of troops to all theatres
+     for(int i=0;i<_attackCountry->getnumOfTheaters() && i<numOfTheaters;i++){
+        if (i % 3 == 0) {
+            for(int j=0;j<numT;j++)
+                if( Transports[i])
+                    Transports[i]->transport(_airforce[j]);
+        }
+     }
+}

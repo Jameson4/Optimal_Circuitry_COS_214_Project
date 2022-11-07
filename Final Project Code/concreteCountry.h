@@ -35,6 +35,7 @@ private:
     int countrySize;
     int numOfTheaters; //number of theaters
     int TheaterSize; //size of each theater in relation to the country size
+    concreteCountry *attackCountry;
     void addTheaterAndTransport();
     void invade(concreteCountry *_attackCountry);
     void invadeAir(concreteCountry *_attackCountry);
@@ -70,6 +71,10 @@ public:
     int getTheaterSize();
     int getnumOfTheaters();
     void createMilitary();
+    void transport(int,concreteCountry *_attackCountry);
+    void transportAirForce(int,concreteCountry *_attackCountry);
+    void transportArmy(int,concreteCountry *_attackCountry);
+    void transportAir(int,concreteCountry *_attackCountry);
 };
 
 
