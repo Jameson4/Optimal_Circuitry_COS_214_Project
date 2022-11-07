@@ -22,9 +22,9 @@ class CountryState {
         ModesOfTransport Transport;
         Observer HighRankingOfficers;
         
-        Observer _airforce;
-        Observer _army;
-        Observer _navy;
+        abstractMilitary _airforce;
+        abstractMilitary _army;
+        abstractMilitary _navy;
 };
 
 #endif
