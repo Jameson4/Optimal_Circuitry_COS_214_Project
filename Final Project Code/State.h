@@ -1,5 +1,8 @@
 #ifndef STATE_H
 #define STATE_H
+#include <list>
+#include "CountryState.h"
+using namespace std;
 
 
 /**
@@ -10,6 +13,7 @@ class State {
     public:
     int currentState;
     State() {currentState =0;}
+    list<CountryState*> countries;
 };
 
 #endif
