@@ -28,3 +28,17 @@ void army::attack(abstractMilitary * attacked){
         cout<<"Personel #"<<personnel<<" from "<<Country->getName()<<" Of Type "<<type<<" Tried to shoot his ally"<<endl;
     }
 }
+//observers
+void army::signUpToMilitary(Observer *o){//sign up to one of 3 generals, per type
+    HighRankingOfficer=o;
+    cout<<"Troop #"<<personnel<<" Of type "<<type<<" will be reporting to general "<<HighRankingOfficer->getName()<<endl;
+    HighRankingOfficer->enrollTroop(this);
+}
+void army::report(){//report to the general
+    cout<<"Troop #"<<personnel<<" Of type "<<type<<" reporting to general "<<HighRankingOfficer->getName()<<endl;
+    HighRankingOfficer->update();
+}
+void army::getHighRankingOfficer(){//get generals
+    return HighRankingOfficer;
+}
+

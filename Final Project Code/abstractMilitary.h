@@ -20,8 +20,14 @@ public:
     virtual ~abstractMilitary();
     virtual void attack(abstractMilitary * attacked)=0;
     country* getCountry();
+    
+    //observers for each troops
+    virtual void signUpToMilitary(Observer *o)=0;//sign up to one of 3 generals, per type
+    virtual void report()=0;//report to the general
+    virtual void getHighRankingOfficer()=0;//get generals
     protected:
         country* Country;
+        Observer* HighRankingOfficer;
 };
 
 

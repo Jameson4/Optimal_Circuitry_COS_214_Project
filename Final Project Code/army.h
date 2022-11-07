@@ -11,7 +11,11 @@ class army : public abstractMilitary {
 public:
     army(int _personnel, string _type);
     void beingAttacked(int damage) override;
-    void attack(abstractMilitary * attacked);
+    void attack(abstractMilitary * attacked);    
+    //observers
+    void signUpToMilitary(Observer *o);//sign up to one of 3 generals, per type
+    void report();//report to the general
+    void getHighRankingOfficer();//get generals
 };
 
 
