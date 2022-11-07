@@ -1,8 +1,10 @@
 #ifndef Modes_h
 #define Modes_h
 #include "Theater.h"
+#include "abstractMilitary.h"
 class country;
 class Theater;
+class abstractMilitary;
 class ModesOfTransport{
     protected:
         Theater* theaters;

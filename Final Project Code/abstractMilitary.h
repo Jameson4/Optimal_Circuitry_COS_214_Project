@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string>
 #include "country.h"
-#include "abstractMilitary.h"
 
 using namespace std;
 

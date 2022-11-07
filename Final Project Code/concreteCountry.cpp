@@ -78,7 +78,7 @@ void concreteCountry::addTheaterAndTransport() {
     //creating different theater types
     //creating different transport types and linking it to the country and corresponding theater
     for (int i = 0; i < numOfTheaters; i++) {
-        if (i % 2 == 0) {
+        if (i % 2 == 0 && i % 3!=0) {
             Theaters[i] = new LandTheater(this, TheaterSize);
             Transports[i] = new LandTransport(this, Theaters[i]);
             Theaters[i]->addModeOfTransport(Transports[i]);
@@ -98,19 +98,115 @@ void concreteCountry::addTheaterAndTransport() {
 }
 
 void concreteCountry::attackAir(concreteCountry *_attackCountry, int personnel) {
-    _attackCountry->_airforce->beingAttacked(this->_airforce->power);
-    cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Airforce";
+    // _attackCountry->_airforce->beingAttacked(this->_airforce->power);
+    // cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Airforce";
+    
+    //Bandisa
+    invadeAir(_attackCountry);
 }
 
 void concreteCountry::attackSea(concreteCountry *_attackCountry, int personnel) {
-    _attackCountry->_navy->beingAttacked(this->_navy->power);
-    cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Navy";
+    // _attackCountry->_navy->beingAttacked(this->_navy->power);
+    // cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Navy";
+    
+    //Bandisa
+    invadeWater(_attackCountry);
 }
 
 void concreteCountry::attackLand(concreteCountry *_attackCountry, int personnel) {
-    _attackCountry->_army->beingAttacked(this->_army->power);
-    cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Army";
+    // _attackCountry->_army->beingAttacked(this->_army->power);
+    // cout<<this->getName() + " dealt " + to_string(personnel) + " damage to " + _attackCountry->getName() + "'s Army";
+
+    //Bandisa
+    invadeLand(_attackCountry);
 }
 
+void concreteCountry::invade(concreteCountry *_attackCountry){
+//full invasion
+//neeed to link attacking country's theater and modes of transport to the countyry that is being attacked
+//this is attacking, _attackCountry is being attacked
+    //this->Theaters=_attackCountry->getTheaters(); //attacking country can now access the attacked countries theaters
+    Theaters= new Theater *[_attackCountry->getnumOfTheaters()];
+    Transports=new ModesOfTransport*[_attackCountry->getnumOfTheaters()];
+    for(int i=0;i<_attackCountry->getnumOfTheaters() && i<numOfTheaters;i++){
+        if (i % 2 == 0 && i % 3!=0) {
+            //remember to delete previous theater
+            Theaters[i] = _attackCountry->getTheaters()[i];
+            Transports[i] = new LandTransport(this, Theaters[i]);
+            Theaters[i]->addModeOfTransport(Transports[i]);
+        } else if (i % 3 == 0) {
+            Theaters[i] = _attackCountry->getTheaters()[i];
+            Transports[i] = new AirSpaceTransport(this, Theaters[i]);
+            Theaters[i]->addModeOfTransport(Transports[i]);
+        } else {
+            Theaters[i] = _attackCountry->getTheaters()[i];
+            Transports[i] = new WaterTransport(this, Theaters[i]);
+            Theaters[i]->addModeOfTransport(Transports[i]);
+        }
+        if (i > 0) {
+            //Theaters[i - 1]->remove(Theaters[i]);//remove older theater links
+            Theaters[i - 1]->add(Theaters[i]); //creating chain for chain of command
+        }
+    }
+}
+
+void concreteCountry::invadeAir(concreteCountry *_attackCountry){
+//invade via air
+    for(int i=0;i<_attackCountry->getnumOfTheaters() && i<numOfTheaters;i++){
+        if (i % 3 == 0 && i%2 !=0) {
+            //remember to delete previous theater
+            Theaters[i] = _attackCountry->getTheaters()[i];
+            Transports[i] = new AirSpaceTransport(this, Theaters[i]);
+            Theaters[i]->addModeOfTransport(Transports[i]);
+            if (i > 0) {
+                //Theaters[i - 1]->remove(Theaters[i]);//remove older theater links
+                Theaters[i - 1]->add(Theaters[i]); //creating chain for chain of command
+            }
+        } 
+    }
+}
+void concreteCountry::invadeLand(concreteCountry *_attackCountry){
+//invade via land    
+    for(int i=0;i<_attackCountry->getnumOfTheaters() && i<numOfTheaters;i++){
+        if (i % 2 == 0 && i%3!=0) {
+            //remember to delete previous theater
+            Theaters[i] = _attackCountry->getTheaters()[i];
+            Transports[i] = new LandTransport(this, Theaters[i]);
+            Theaters[i]->addModeOfTransport(Transports[i]);
+            if (i > 0) {
+                //Theaters[i - 1]->remove(Theaters[i]);//remove older theater links
+                Theaters[i - 1]->add(Theaters[i]); //creating chain for chain of command
+            }
+        } 
+    }
+}
+void concreteCountry::invadeWater(concreteCountry *_attackCountry){
+//invade via water    
+    for(int i=0;i<_attackCountry->getnumOfTheaters() && i<numOfTheaters;i++){
+        if (i % 2 != 0  && i%3!=0) {
+            //remember to delete previous theater
+            Theaters[i] = _attackCountry->getTheaters()[i];
+            Transports[i] = new WaterTransport(this, Theaters[i]);
+            Theaters[i]->addModeOfTransport(Transports[i]);
+            if (i > 0) {
+                // Theaters[i - 1]->remove(Theaters[i]);//remove older theater links
+                Theaters[i - 1]->add(Theaters[i]); //creating chain for chain of command
+            }
+        } 
+    }
+}
+
+Theater** concreteCountry::getTheaters(){
+    return Theaters;
+}
+ModesOfTransport **concreteCountry::getModesOfTransport(){
+    return Transports;
+}  
+int concreteCountry::getTheaterSize(){
+    return TheaterSize;
+}
+int concreteCountry::getnumOfTheaters(){
+    return numOfTheaters;
+}
 
 

@@ -17,6 +17,7 @@ class Theater{
     public:
         Theater(country *c,int s);
         void add(Theater*);
+        void remove(Theater*);
         virtual void addModeOfTransport(ModesOfTransport* m);
         virtual bool isEmpty();
         virtual void fight()=0;

@@ -36,6 +36,10 @@ private:
     int numOfTheaters; //number of theaters
     int TheaterSize; //size of each theater in relation to the country size
     void addTheaterAndTransport();
+    void invade(concreteCountry *_attackCountry);
+    void invadeAir(concreteCountry *_attackCountry);
+    void invadeLand(concreteCountry *_attackCountry);
+    void invadeWater(concreteCountry *_attackCountry);
 public:
     explicit concreteCountry(const string& name, const string& size);
     concreteCountry(string name, const string& size, int navyPersonnell, int armyPersonnell, int airforcePersonnell);
@@ -60,6 +64,11 @@ public:
     void createAlliance(country*);
     void createEnemy(country*);
     void buildRoads(country*);
+    
+    Theater** getTheaters();
+    ModesOfTransport **getModesOfTransport();
+    int getTheaterSize();
+    int getnumOfTheaters();
 };
 
 

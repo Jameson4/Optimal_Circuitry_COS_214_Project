@@ -23,7 +23,13 @@ void Theater::add(Theater *t){ //creating chain for commands
     else
         next=t;
 }
-
+void Theater::remove(Theater *t){
+    if(next==t){
+        next=next->next;
+    }
+    else
+        next->remove(t);
+}
 void Theater::addMilitary(abstractMilitary* m){
     int i=rand()%(size+1)+0;
     int j=rand()%(size+1)+0;

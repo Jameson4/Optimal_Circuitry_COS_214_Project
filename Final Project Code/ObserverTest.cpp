@@ -6,5 +6,6 @@
 #include "LandTheater.h"
 #include "WaterTheater.h"
 int main(){
+    std::cout<<"Testing Country,Military,Theater and Transport"<<std::endl;
     return 0;
 }
