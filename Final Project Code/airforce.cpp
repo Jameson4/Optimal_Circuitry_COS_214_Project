@@ -17,4 +17,14 @@ void airforce::beingAttacked(int damage) {
         cout<<"Airforce has been eliminated\n";
     }
 }
+void airforce::attack(abstractMilitary * attacked){
+    if(Country->getName()!=attacked->getCountry()->getName()){
+        cout<<"Personel #"<<personnel<<" from "<<Country->getName()<<" Of Type "<<type<<" Attacked: >>>>>"<<endl;
+        cout<<"<<<<<< Personel #"<<attacked->personnel<<" from "<<attacked->getCountry()->getName()<<" Of Type "<<attacked->type<<endl;
+        attacked->beingAttacked(getHealth());
+    }
+    else{
+        cout<<"Personel #"<<personnel<<" from "<<Country->getName()<<" Of Type "<<type<<" Tried to shoot his ally"<<endl;
+    }
+}
 

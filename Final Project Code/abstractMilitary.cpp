@@ -11,3 +11,6 @@ int abstractMilitary::getHealth() {
 abstractMilitary::~abstractMilitary(){
 
 }
+country* abstractMilitary::getCountry(){
+    return Country;
+}

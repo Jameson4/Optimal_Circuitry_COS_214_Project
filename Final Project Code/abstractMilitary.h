@@ -18,6 +18,10 @@ public:
     virtual void beingAttacked(int damage) = 0;
     int getHealth();
     virtual ~abstractMilitary();
+    virtual void attack(abstractMilitary * attacked)=0;
+    country* getCountry();
+    protected:
+        country* Country;
 };
 
 

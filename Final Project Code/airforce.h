@@ -16,6 +16,7 @@ class airforce : public abstractMilitary{
     public:
         airforce(int _personnel, string _type);
         void beingAttacked(int damage) override;
+        void attack(abstractMilitary * attacked);
 };
 
 #endif //OPTIMAL_CIRCUITRY_COS_214_PROJECT_AIRFORCE_H

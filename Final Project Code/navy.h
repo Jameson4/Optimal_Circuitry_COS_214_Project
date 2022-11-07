@@ -12,6 +12,7 @@ class navy : public abstractMilitary {
 public:
     navy(int _personnel, string _type);
     void beingAttacked(int damage) override;
+    void attack(abstractMilitary * attacked);
 };
 
 
