@@ -27,9 +27,9 @@ using namespace std;
 class concreteCountry : public country{
 private:
     int totalPersonnel = 0;
-    abstractMilitary* _airforce;
-    abstractMilitary* _army;
-    abstractMilitary* _navy;
+    abstractMilitary** _airforce;
+    abstractMilitary** _army;
+    abstractMilitary** _navy;
     string _size;
     //Israel/Bandisa Add On
     int countrySize;
@@ -69,6 +69,7 @@ public:
     ModesOfTransport **getModesOfTransport();
     int getTheaterSize();
     int getnumOfTheaters();
+    void createMilitary();
 };
 
 

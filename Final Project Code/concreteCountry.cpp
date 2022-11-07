@@ -35,6 +35,7 @@ concreteCountry::concreteCountry(const string& name, const string& size) {
         airforcePersonnell = rand()%(300000-220000+1)+220000;
     }
     totalPersonnel = navyPersonnell + armyPersonnell + airforcePersonnell;
+    createMilitary();
 }
 
 concreteCountry::concreteCountry(string name, const string& size,  int _navyPersonnell, int _armyPersonnell, int _airforcePersonnell) {
@@ -44,6 +45,7 @@ concreteCountry::concreteCountry(string name, const string& size,  int _navyPers
     armyPersonnell = _armyPersonnell;
     airforcePersonnell = _airforcePersonnell;
     totalPersonnel = navyPersonnell + armyPersonnell + airforcePersonnell;
+    createMilitary();
 }
 
 int concreteCountry::getTotalPersonnel() {
@@ -63,9 +65,9 @@ int concreteCountry::getAirforcePersonnel() {
 }
 
 void concreteCountry::setMilitaries(abstractMilitary* _air, abstractMilitary* _arm, abstractMilitary* _nav) {
-    _airforce = _air;
-    _army = _arm;
-    _navy = _nav;
+    // _airforce = _air;
+    // _army = _arm;
+    // _navy = _nav;
 }
 
 //Bandisa Add On
@@ -199,7 +201,7 @@ void concreteCountry::invadeWater(concreteCountry *_attackCountry){
 Theater** concreteCountry::getTheaters(){
     return Theaters;
 }
-ModesOfTransport **concreteCountry::getModesOfTransport(){
+ModesOfTransport** concreteCountry::getModesOfTransport(){
     return Transports;
 }  
 int concreteCountry::getTheaterSize(){
@@ -209,4 +211,17 @@ int concreteCountry::getnumOfTheaters(){
     return numOfTheaters;
 }
 
-
+void concreteCountry::createMilitary(){
+    _navy = new abstractMilitary*[navyPersonnell];
+    for(int i=0;i<navyPersonnell;i++){
+        _navy[i]=new navy(i+1,"Navy");
+    }
+    _navy = new abstractMilitary*[armyPersonnell];
+    for(int i=0;i<armyPersonnell;i++){
+        _army[i]=new army(i+1,"Army");
+    }
+    _navy = new abstractMilitary*[airforcePersonnell];
+    for(int i=0;i<airforcePersonnell;i++){
+        _airforce[i]=new airforce(i+1,"AIR Force");
+    }
+}
