@@ -10,11 +10,13 @@
 void SimulationMaster::notify(){
     for(int i=0;i<numSizeA;i++){
         for(int j=0;j<3;j++)
-            sideA[i][j]->setPhase(phase);
+            if(sideA && sideA[i] && sideA[i][j])
+                sideA[i][j]->setPhase(phase);
     }
     for(int i=0;i<numSizeB;i++){
         for(int j=0;j<3;j++)
-            sideA[i][j]->setPhase(phase);
+            if(sideB && sideA[i] && sideB[i][j])
+                sideB[i][j]->setPhase(phase);
     }
 }
 void SimulationMaster::reg(country *c,std::string side){
@@ -53,6 +55,26 @@ void SimulationMaster::DeReg(country *c,std::string side){
 }
 void SimulationMaster::phaseChange(){
     //change phases according to sequence diagram
+    bool change=false;
+    int totalEnrolled=0;
+    int totalAlive=0;
+    for(int i=0;i<numSizeA;i++){
+        for(int j=0;j<3;j++)
+            if(sideA && sideA[i] && sideA[i][j]){
+                totalEnrolled+=sideA[i][j]->getnumEnrolled();
+                totalAlive+=sideA[i][j]->getNumTroopsAlive();
+            }
+    }
+    checkEachSide(totalEnrolled,totalAlive,change);
+    if(!change){ //if there was a significant change from one side's perspective, then there is no need to check the other.
+        for(int i=0;i<numSizeB;i++){
+            for(int j=0;j<3;j++)
+                if(sideB && sideA[i] && sideB[i][j]){
+                    totalEnrolled+=sideA[i][j]->getnumEnrolled();
+                    totalAlive+=sideA[i][j]->getNumTroopsAlive();
+                }
+        }
+    }
 }
 void SimulationMaster::addCountry(country*c, std::string side){
     int s;
@@ -91,6 +113,7 @@ void SimulationMaster::addCountry(country*c, std::string side){
 SimulationMaster::SimulationMaster(int A,int B){
     numSizeA=A;
     numSizeB=B;
+    phaseIndex=0;//always starts at phase 0;
     stringstream s;
     for(int i=1;i<6;i++){   //intilising phase array
         s<<i;
@@ -107,4 +130,30 @@ SimulationMaster::SimulationMaster(int A,int B){
     for(int i=0;i<numSizeB;i++){
         sideB[i]=new Observer*[3];
     }
+}
+void SimulationMaster::checkEachSide(int &totalEnrolled,int &totalAlive, bool &change){
+    //check to see if there are significant changes in the war, from the perspective of one side, then all sides combined
+    if(totalAlive/totalEnrolled*100<=10 && phaseIndex<3){
+            change=true;    
+            phase=phases[phaseIndex++];
+            cout<<"War has entered "<<phase<<endl;
+        }
+        else
+        if(totalAlive/totalEnrolled*100<=50 && phaseIndex==3){
+            change=true;    
+            phase=phases[phaseIndex++];
+            cout<<"War has entered "<<phase<<endl;
+        }
+        else
+        if(phaseIndex==4){
+            change=true;    
+            phase=phases[phaseIndex++];
+            cout<<"Stablizing Society"<<endl;
+        }
+        else
+        if(phaseIndex==5){
+            change=true;    
+            phase=phases[phaseIndex++];
+            cout<<"Enabling Civil Activity"<<endl;
+        }
 }

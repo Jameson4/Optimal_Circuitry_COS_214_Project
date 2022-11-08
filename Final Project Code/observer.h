@@ -14,6 +14,8 @@ class Observer{
         virtual void setPhase(std::string)=0;
         virtual std::string getName()=0;
         virtual void enrollTroop(abstractMilitary*)=0;
+        virtual int getNumTroopsAlive()=0;
+        virtual int getnumEnrolled()=0;
     protected:
         SimulationMaster *mediator;        
         abstractMilitary** troops;

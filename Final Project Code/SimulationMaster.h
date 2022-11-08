@@ -11,7 +11,7 @@ class SimulationMaster:public Mediator{
         std::string phase,phases[6];
         country **SideACountries;
         country **SideBCountries;
-        int numSizeA,numSizeB;
+        int numSizeA,numSizeB,phaseIndex;
     public:
         void notify();
         void reg(country *c,std::string side);
@@ -19,5 +19,6 @@ class SimulationMaster:public Mediator{
         void phaseChange();
         void addCountry(country*c, std::string side);
         SimulationMaster(int A,int B);
+        void checkEachSide(int &, int &, bool &);
 };
 #endif
