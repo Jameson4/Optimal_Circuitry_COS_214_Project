@@ -5,6 +5,6 @@ using namespace std;
 
 int main(){
 
-    WarSystemFacade war = new WarSystemFacade();
+    WarSystemFacade* war = new WarSystemFacade();
     return 0;
 }
