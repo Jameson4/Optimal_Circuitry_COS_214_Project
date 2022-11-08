@@ -4,7 +4,7 @@
 #include <list>
 using namespace std;
 
-class Country;
+class country;
 class Observer;
 class abstractMilitia;
 /**
@@ -15,13 +15,19 @@ class State {
     public:
     State() {currentState =0;}
     int currentState;
-    list<Country*> countries;
-    list<Observer*> HighRankingOffices;
-    list<abstractMilitia*> _airforce;
-    list<abstractMilitia*> _navy;
-    list<abstractMilitia*> _army;
-    
-    
+    country** countriesA;
+    int numSizeA;
+    Observer** HighRankingOfficesA;
+    abstractMilitia*** _airforceA;
+    abstractMilitia*** _navyA;
+    abstractMilitia*** _armyA;
+
+    country** countriesB;
+    int numSizeB;
+    Observer** HighRankingOfficesB;
+    abstractMilitia*** _airforceB;
+    abstractMilitia*** _navyB;
+    abstractMilitia*** _armyB;
 };
 
 #endif
