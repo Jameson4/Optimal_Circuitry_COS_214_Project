@@ -22,7 +22,7 @@ int main() {
     concreteCountry* China = new concreteCountry("China", "large");
     cout<<"\n";
 
-/*    militaryFactory* milFactory = new militaryFactory();
+    militaryFactory* milFactory = new militaryFactory();
 
      milFactory->createMilitary(ZA);
     cout<<"\n";
@@ -33,7 +33,7 @@ int main() {
     milFactory->createMilitary(China);
     cout<<"\n";
 
-    ZA->attackAir(ENG,200); */
+    ZA->attackAir(ENG,200);
 
     return 0;
 }
