@@ -25,6 +25,7 @@
 using namespace std;
 
 class concreteCountry : public country{
+ friend class WarSystemFacade
 private:
     int totalPersonnel;
     abstractMilitary** _airforce;
