@@ -2,11 +2,17 @@
 #include <iostream>
 #include "State.h"
 #include "Memento.h"
+#include "SimulationMaster.h"
 using namespace std;
 
-
 War::War() {
+    simMas = new SimulationMaster(10,10);
     state_ = new State();
+}
+War::War(SimulationMaster* sim) {
+    simMas = sim;
+    state_ = new State();
+    
 }
 
 War::War(State s) {
@@ -26,11 +32,11 @@ Memento* War::resume() {
 }
 
 Memento* War::createMemento() {
-    return new Memento(state_->currentState);
+    return simMas->createMemento();
 }
 
 void War::restore(Memento* mem) {
-    state_ = mem->state_;
+    simMas->restore(mem);
 }
 
 void War::step() {
