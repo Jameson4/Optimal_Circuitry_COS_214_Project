@@ -37,7 +37,7 @@ void airforce::report(){//report to the general
     cout<<"Troop #"<<personnel<<" Of type "<<type<<" reporting to general "<<HighRankingOfficer->getName()<<endl;
     HighRankingOfficer->update();
 }
-void airforce::getHighRankingOfficer(){//get generals
+Observer* airforce::getHighRankingOfficer(){//get generals
     return HighRankingOfficer;
 }
 

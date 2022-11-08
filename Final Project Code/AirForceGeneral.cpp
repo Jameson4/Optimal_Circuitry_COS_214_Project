@@ -37,3 +37,6 @@ int AirForceGeneral::getNumEnrolled(){
 void AirForceGeneral::report(){
     mediator->notify();
 }
+std::string AirForceGeneral::getName(){
+    return name;
+}

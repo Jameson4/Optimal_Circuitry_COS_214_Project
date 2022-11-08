@@ -26,7 +26,7 @@ using namespace std;
 
 class concreteCountry : public country{
 private:
-    int totalPersonnel = 0;
+    int totalPersonnel;
     abstractMilitary** _airforce;
     abstractMilitary** _army;
     abstractMilitary** _navy;
@@ -43,7 +43,7 @@ private:
     void invadeWater(concreteCountry *_attackCountry);
 public:
     explicit concreteCountry(const string& name, const string& size);
-    concreteCountry(string name, const string& size, int navyPersonnell, int armyPersonnell, int airforcePersonnell);
+    concreteCountry(string name,string& size, int navyPersonnell, int armyPersonnell, int airforcePersonnell);
     ~concreteCountry() override;
 
     string getName() override;

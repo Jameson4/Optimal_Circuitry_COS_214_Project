@@ -38,7 +38,7 @@ concreteCountry::concreteCountry(const string& name, const string& size) {
     createMilitary();
 }
 
-concreteCountry::concreteCountry(string name, const string& size,  int _navyPersonnell, int _armyPersonnell, int _airforcePersonnell) {
+concreteCountry::concreteCountry(string name,string& size,  int _navyPersonnell, int _armyPersonnell, int _airforcePersonnell) {
     countryName = name;
     _size = size;
     navyPersonnell = _navyPersonnell;

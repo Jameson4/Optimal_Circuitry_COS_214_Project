@@ -37,3 +37,6 @@ int ArmyGeneral::getNumEnrolled(){
 void ArmyGeneral::report(){
     mediator->notify();
 }
+std::string ArmyGeneral::getName(){
+    return name;
+}

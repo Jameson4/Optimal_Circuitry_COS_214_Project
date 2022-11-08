@@ -37,6 +37,6 @@ void  navy::report(){//report to the general
     cout<<"Troop #"<<personnel<<" Of type "<<type<<" reporting to general "<<HighRankingOfficer->getName()<<endl;
     HighRankingOfficer->update();
 }
-void  navy::getHighRankingOfficer(){//get generals
+Observer*  navy::getHighRankingOfficer(){//get generals
     return HighRankingOfficer;
 }

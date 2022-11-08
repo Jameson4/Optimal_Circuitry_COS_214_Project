@@ -37,3 +37,6 @@ int NavyGeneral::getNumEnrolled(){
 void NavyGeneral::report(){
     mediator->notify();
 }
+std::string NavyGeneral::getName(){
+    return name;
+}

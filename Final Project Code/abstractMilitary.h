@@ -8,9 +8,9 @@
 #include <iostream>
 #include <string>
 #include "country.h"
-
+#include "Observer.h"
 using namespace std;
-
+class country;
 class abstractMilitary {
 public:
     int personnel, health, power;
@@ -24,7 +24,7 @@ public:
     //observers for each troops
     virtual void signUpToMilitary(Observer *o)=0;//sign up to one of 3 generals, per type
     virtual void report()=0;//report to the general
-    virtual void getHighRankingOfficer()=0;//get generals
+    virtual Observer* getHighRankingOfficer()=0;//get generals
     protected:
         country* Country;
         Observer* HighRankingOfficer;

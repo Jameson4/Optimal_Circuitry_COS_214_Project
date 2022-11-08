@@ -11,5 +11,6 @@ class NavyGeneral: public Observer{
         void setPhase(std::string p);
         int getNumEnrolled();
         void report();
+        std::string getName();
 };
 #endif

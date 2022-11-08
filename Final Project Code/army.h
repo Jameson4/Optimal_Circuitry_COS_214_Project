@@ -15,7 +15,7 @@ public:
     //observers
     void signUpToMilitary(Observer *o);//sign up to one of 3 generals, per type
     void report();//report to the general
-    void getHighRankingOfficer();//get generals
+    Observer* getHighRankingOfficer();//get generals
 };
 
 
