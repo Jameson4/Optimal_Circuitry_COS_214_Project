@@ -1,7 +1,10 @@
-/*  ##### Composite design pattern being used #####
-	This is the Abstract class (Component of pattern)
-	This will be implemented by countryGroup (Composite of pattern) also known as intermediate node
-*/
+/**
+ * @brief Abstract class, component participant of composite pattern
+ *  AllianceCountry keeps a list of countries in a given alliance.
+ * 
+ * @class AllianceCountry
+ * @author Israel
+ */
 #include <exception>
 #ifndef __AllianceCountry_h__
 #define __AllianceCountry_h__
