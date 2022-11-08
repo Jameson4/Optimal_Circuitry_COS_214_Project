@@ -157,3 +157,4 @@ void SimulationMaster::checkEachSide(int &totalEnrolled,int &totalAlive, bool &c
             cout<<"Enabling Civil Activity"<<endl;
         }
 }
+//integreate composite pattern!
