@@ -9,14 +9,8 @@ using namespace std;
 
 class DefendState : public BattleState {
   public:
-    DefendState(DecideStrat* strategy);
-    ~DefendState();
     void handleChange(ConcreteSubject* c);
     string getBattleState();
-    int DefendStrat(int a, int b);
-
-    private:
-    DecideStrat* strategy;
 };
 
 #endif 
